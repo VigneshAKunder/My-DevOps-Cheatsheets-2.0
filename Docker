@@ -1,0 +1,487 @@
+Docker → docker-curriculum.com
+
+Basic Docker commands: 
+---------------------
+- docker run <image>
+- docker pull <imageName>
+- docker ps
+- docker ps -a
+- docker stop <containerName>
+- docker rm <containeName>
+- docker rmi <imageName>
+- docker run -d <imageName>
+- docker run -p <hostPort>:<containerPort> <imageName>
+- docker attach <containerName>
+- docker run -v <hostVolumepath>:<container volumePath> <imageName>
+- docker inspect <containerID>
+- docker stop $(docker ps -aq)
+- docker rm $(docker ps -aq)
+- docker rmi $(docker images -aq)
+- docker exec -it <containerId> bash
+- docker log <containerId>
+
+=================================================================================================================================================================
+
+Docker simplifies the process of building, creating and running applications inside containers across different environments.
+
+How will we write docker file, build images and run containers. Let's deep dive into some Docker commands which we have to use in real-time.
+
+To begin with, you can create an EC2 Instance it may ubuntu or redhat, etc. and the below commands to install docker
+- sudo apt update 
+- sudo apt install docker.io -y
+- sudo systemctl enable docker
+- sudo systemctl start docker
+
+Now, you need to grant access to your user to run docker commands
+you should add the user to Docker linux group. Docker group is creates by default when docker is installed.
+here i'm using centos machine, my username is centos, it may change depends on which machine it is
+
+- sudo usermod -aG docker centos
+
+- docker build <docker-file-name> --> take instructions from file and creates an image.
+- docker images --> listout the docker images
+- docker ps --> list down the running container
+- docker ps -a --> listing all docker containers including exited, stopped.
+
+- docker run <image-id> --> it is going to be pull, create and start container, then container will be exited. 
+- docker run -p <host port>:<container port> <image-id> --> container run in foreground and attaches to screen, we can't anything in terminal.
+-docker run -d -p <host port>:<container port> <image-id> --> container running in background.
+
+If You want run a container with specific name
+- docker run -d --name <name> -p <host port>:<container port> <image-id>
+
+If you want go inside a container and do some operations, how can we do 
+- docker exec -it <container-id> bash --> now,you can go to inside a container
+
+How to delete containers and images
+-----------------------------------
+- docker rmi <image-id> --> it will delete particular image, which you have given 
+- docker rmi `docker images -a -q` --> it removes all images
+- docker rm <container-id> --> deletes particular container regarding container id
+- docker rm `docker ps -a -q` --> it will delete all container
+
+How to check container logs
+- docker logs <container-id>
+
+- docker inspect <image-id> --> you can check all information about image.
+
+How to push the images into DockerHub
+-------------------------------------
+you have an account in Dockerhub, 
+- docker login --> then it will open to give credentials 
+username:<Enter username>
+password:<Enter password>
+then you will push the images into registry by using below command.
+- docker push username/image-name:version
+
+==================================================================================================================================================================
+🐬 𝐃𝐨𝐜𝐤𝐞𝐫 𝐂𝐨𝐧𝐭𝐚𝐢𝐧𝐞𝐫 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐟𝐨𝐫 𝐃𝐞𝐯𝐎𝐩𝐬 𝐄𝐧𝐠𝐢𝐧𝐞𝐞𝐫
+
+1. 🏗 Creates a container from an image
+docker run -it --name nginx nginx
+
+2. 🚀 Begins a Docker container
+docker start nginx
+
+3. 🔄 Restarts a Docker container.
+docker restart nginx
+
+4. ⏸ Temporarily halts a container.
+docker pause nginx
+
+5. ▶️ Resumes a paused container.
+docker unpause nginx
+
+6. 🛑 Ends a running Docker container.
+docker stop nginx
+
+7. ❌ Forcefully stops a running container
+docker kill nginx
+
+8. 📊 Lists Docker containers.
+docker ps
+
+9. 🖥 Accesses a container's shell.
+docker exec -it nginx /bin/bash
+
+10. 📝 Connects to a running container.
+docker attach nginx
+
+11. 📜 Views container logs.
+docker logs nginx
+
+12. 🔄 Change a container's name.
+docker rename old-name new-name
+
+13. 🔍 Retrieves container info.
+docker inspect nginx
+
+14. 📂 Copies files to/from a container.
+docker cp nginx:/container-path/file.txt /local-path
+
+15. 🗑 Deletes a container.
+docker rm nginx
+
+==================================================================================================================================================================
+10 Basic Interview Questions of Docker & Dockerfile asked in interviews:
+
+1. How will you run multiple Docker containers in one single host?
+Answer: Docker Compose is the best way to run multiple containers as a single service by defining them in a docker-compose.yml file.
+
+2. If you delete a running container, what happens to the data stored in that container?
+Answer: When a running container is deleted, all data in its file system also goes away. However, we can use Docker Data Volumes to persist data even if the container is deleted.
+
+3. How do you manage sensitive security data like passwords in Docker?
+Answer: Docker Secrets and Docker Environment Variables can be used to manage sensitive data.
+
+4. What is the difference between Docker Image and a Docker Container?
+Answer: Docker Image is a template that contains the application, libraries, and dependencies required to run an application, whereas a Docker Container is the running instance of a Docker Image.
+
+5. How do you handle persistent storage in Docker?
+Answer: Docker Volumes and Docker Bind Mounts are used to handle persistent storage in Docker.
+
+6. What is the process to create a Docker Container from a Dockerfile?
+Answer: Docker Build command is used to create Docker images from a Dockerfile and then Docker Run command is used to create Containers from Docker images.
+
+7. How will you scale Docker containers based on traffic to your application?
+Answer: Docker Swarm or Kubernetes can be used to auto-scale Docker Containers based on traffic load.
+
+8. When RUN and CMD instructions will be executed?
+Answer: RUN instruction will be executed while building the Docker Image. CMD instruction will be executed while starting the Container.
+
+9. What’s the different between COPY and ADD instructions?
+Answer: Using COPY instruction,We can copy local files and folders from docker build context to Docker Image. These files and folders will be copied while creating a Docker Image.
+ADD instruction works similar to COPY instruction but the only different is that we can download files from remote locations that’s from Internet while creating a Docker Image.
+
+10. What’s the different between CMD and ENTRYPOINT instructions?
+Answer: CMD instruction will be used to start the process or application inside the Container.
+ENTRYPOINT instruction also works similar to CMD instruction. ENTRYPOINT instruction will also be executed while creating a container. CMD instruction can be overridden while creating a Container where as ENTRYPOINT instruction cannot be overridden while creating a Container.
+
+=================================================================================================================================================================
+20 important Docker Commands:
+
+✔docker version - Shows the current Docker version installed on the system.
+✔docker info - Displays information about the current Docker installation and configuration.
+✔docker run - Runs a Docker container.
+✔docker ps - Lists the currently running Docker containers.
+✔docker images - Lists the Docker images available on the system.
+✔docker pull - Downloads a Docker image from a Docker registry.
+✔docker push - Uploads a Docker image to a Docker registry.
+✔docker build - Builds a Docker image from a Dockerfile.
+✔docker tag - Tags a Docker image with a name that can be used for uploading to a Docker registry.
+✔docker commit - Creates a new Docker image from a running container.
+✔docker start - Starts a stopped Docker container.
+✔docker stop - Stops a running Docker container.
+✔docker restart - Restarts a running Docker container.
+✔docker rm - Removes a stopped Docker container.
+✔docker rmi - Removes a Docker image.
+✔docker logs - Displays the logs of a running Docker container.
+✔docker inspect - Returns low-level information on a Docker object (container, image, network, etc.)
+✔docker network - Manages Docker networks.
+✔docker volume - Manages Docker volumes.
+✔docker-compose - Manages multi-container Docker applications.
+
+=================================================================================================================================================================
+How do Multi-stage builds reduce the size of your Docker Image?
+
+Multi-stage builds combined with slim base images is the single most effective technique to reduce the size of your Docker images.
+
+I’ve been able to bring an image from 1GB down to just 30MB 🤯 
+We were running 2K+ containers in production, imagine the impact on cost & resource consumption!
+
+Here’s the basic idea behind Docker’s multistage builds
+
+👉 Usually you’d start out with a fat base image like Ubuntu or an image specific to your programming language. This comes packed with essential build tools like Compilers.
+
+👉 Next, you’d run commands to download necessary dependencies like libraries, testing frameworks, linters, security scanners and so on. All of these are needed for your code to pass necessary quality checks, compile and produce the final artifact(s).
+
+👉 At this point, your application is built and ready to run, so you deploy this image in production.
+
+But we no longer need all those dependencies used during the BUILD phase. If your app is written in C++, you probably only need the compiled binary for production.
+And yet, our prod container carries that 900MB worth of burden with it 👎 
+
+
+So we obviously shed all that load!
+
+But traditionally, this has been very tedious to achieve in Docker, involving hacks, custom bash scripts and lots of spaghetti code to maintain 💢 
+
+
+Enter Multi-stage builds! 
+
+These allow you to split your Docker image definition into multiple STAGES. Every time you use a “FROM <base image>” statement in your Dockerfile, its a new stage.
+
+You can cherry-pick the files to include from each stage into your final image. So it’s not a surprise that you’d only pick the final executable file to put into your final image.
+
+You can choose a light-weight base image such as Alpine or Distroless and just add your executable to it.
+
+This is the most powerful way to end up with a super light image that is easy to run and maintain in production.
+
+=================================================================================================================================================================
+Docker simplifies application development by using containers to ensure consistent performance across different environments. 
+
+Here's how it works:
+
+1. Developer: Writes the code and creates a Dockerfile, which specifies the environment and dependencies needed for the application.
+2. Client: Commands like `docker build`, `docker pull`, `docker run`, and `docker push` are used to interact with Docker.
+3. Dockerfile: Contains instructions to create a Docker image, starting from a base image (e.g., `postgres:latest`), setting environment variables, and exposing ports.
+4. Docker Daemon: Runs on the Docker host, managing images and containers.
+5. Docker Host: The machine where Docker Daemon is running, managing container lifecycle.
+6. Images: Packaged environments and applications stored in a registry, like Docker Hub, including dependencies and configurations.
+7. Containers: Isolated environments created from Docker images to run applications consistently.
+
+Commands:
+- `docker build`: Creates an image from the Dockerfile.
+- `docker pull`: Downloads an image from a registry.
+- `docker run`: Launches a container from an image.
+- `docker push`: Uploads an image to a registry.
+
+This process allows for easy and consistent application deployment, leveraging images and containers to ensure everything works seamlessly from development to production.
+
+=================================================================================================================================================================
+Top Docker Commands: 
+
+1. Run a Container:
+ - `docker run -d -p 80:80 --name webserver nginx`
+ - Easily run an Nginx web server container.
+
+2. List Running Containers:
+ - `docker ps`
+ - Check which containers are currently running.
+
+3. Stop a Container:
+ - `docker stop [container_id]`
+ - Gracefully stop a running container.
+
+4. Remove a Container:
+ - `docker rm [container_id]`
+ - Clean up stopped containers.
+
+5. Build an Image:
+ - `docker build -t my-image:latest .`
+ - Create a Docker image from your Dockerfile.
+
+6. Pull an Image:
+ - `docker pull ubuntu:latest`
+ - Download the latest Ubuntu image from Docker Hub.
+
+7. Push an Image:
+ - `docker push my-image:latest`
+ - Share your image by pushing it to Docker Hub.
+
+8. View Container Logs:
+ - `docker logs [container_id]`
+ - Troubleshoot by viewing container logs.
+
+=================================================================================================================================================================
+Docker Compose, a tool that's significantly simplifying container management.
+
+Summary:
+
+-->What is Docker Compose? 
+
+-->A Docker Compose file is a YAML file that defines & manages multi-container docker applications.
+-->It is used with docker compose ,a tool that allows you to define & run multi container Docker applications easily
+-->The compose file usually named ' docker-compose.yml ',specifies how to configure & launch multiple docker containers as a part of a single application.
+
+-->The commands to run the docker compose file are:
+
+1) docker-compose up (use "-d" flag to run the services in detached mode)
+2) docker-compose down
+
+
+ -->Why Docker Compose? 
+
+Docker Compose is essential for:
+
+-->Simplicity: Define your app’s services, networks, and volumes in a single file.
+-->Efficiency: Run multiple containers with a single command (docker-compose up).
+-->Consistency: Ensure your development, testing, and production environments are identical.
+-->Scalability: Easily scale services up or down as needed.
+
+Structure of a Docker compose file : 
+
+i) version: specifies the version of the docker compose file format.
+ii)services: defines the individual services that make up your application.
+iii)networks: defines custom networks for your services to communicate with each other.
+iv)volumes: defines persistent storage volumes that can be shared among services.
+
+Here’s a simple example of docker compose file:
+
+version: '3'
+services:
+ web:
+ image: nginx:latest
+ ports:
+ - "80:80"
+ database:
+ image: postgres:latest
+ environment:
+ POSTGRES_DB: mydatabase
+ POSTGRES_USER: user
+ POSTGRES_PASSWORD: password
+
+=================================================================================================================================================================
+Docker-> Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all parts it needs, such as libraries and other dependencies, and ship it all out as one package.
+
+Key Concepts:
+
+Image: A lightweight, standalone, executable package that includes everything needed to run a piece of software, including the code, a runtime, libraries, environment variables, and configuration files.
+Container: A runnable instance of an image. You can create, start, stop, move, or delete a container using Docker commands.
+Dockerfile: A text file that contains instructions on how to build a Docker image.
+Basic Commands:
+
+docker build: Creates a Docker image from a Dockerfile.
+docker run: Runs a container from a Docker image.
+docker ps: Lists all running containers.
+docker stop: Stops a running container.
+Docker-Compose
+Docker-Compose is a tool for defining and running multi-container Docker applications. It uses a YAML file to configure the application’s services. With a single command, you can start all the services defined in a docker-compose.yml file.
+
+Key Concepts:
+
+Service: A service is a definition of a container in a Docker Compose file. For example, a web application and a database could each be services in a Docker Compose setup.
+docker-compose.yml: A YAML file where you define the services that make up your application.
+Basic Commands:
+
+docker-compose up: Builds, (re)creates, starts, and attaches to containers for a service.
+docker-compose down: Stops and removes containers, networks, volumes, and images created by docker-compose up.
+docker-compose ps: Lists all the services defined in the docker-compose.yml file.
+Example Scenario:
+
+Imagine you have a web application that needs a database to run. Without Docker, you would have to manually set up the environment, install dependencies, and manage the software versions. With Docker, you can create two images: one for the web application and one for the database. With Docker-Compose, you can define both these services in a single file and run them together with a simple command.
+
+=================================================================================================================================================================
+Docker images can get bulky as projects grow. That's where multistage builds come in, allowing you to create leaner, more efficient images. By using multiple “FROM” statements in your Dockerfile, you can build your application in one stage and copy only the essentials into a final, smaller image.
+
+Why Use Multistage Builds?
+
+- Smaller Images: Only include what’s necessary.
+- Cleaner & Safer: Exclude build tools and unnecessary dependencies.
+- Faster Builds: Leverage caching for efficiency.
+
+Example:
+(dockerfile)
+FROM golang:1.17 AS builder
+WORKDIR /app
+COPY . .
+RUN go build -o myapp
+
+FROM debian:buster-slim
+WORKDIR /app
+COPY --from=builder /app/myapp .
+CMD ["./myapp"]
+
+This Dockerfile compiles a Go app in one stage and copies just the binary into a slim Debian image, keeping it lightweight and production-ready.
+Adopting multistage builds is a small change that can lead to significant improvements in your Docker workflows. 
+
+=================================================================================================================================================================
+🚀 Essential Docker Commands for DevOps Engineers 🐳
+
+📌 Docker Basics:
+- docker --version: Check Docker version.
+- docker info: Get system-wide information.
+- docker help: Get help with Docker commands.
+
+📌 Container Lifecycle:
+- docker run [OPTIONS] IMAGE [COMMAND] [ARG...]: Run a container.
+- docker ps: List running containers.
+- docker ps -a: List all containers.
+- docker stop CONTAINER: Stop a running container.
+- docker start CONTAINER: Start a stopped container.
+- docker restart CONTAINER: Restart a container.
+- docker rm CONTAINER: Remove a container.
+- docker kill CONTAINER: Kill a running container.
+
+📌 Images:
+- docker images: List images.
+- docker pull IMAGE: Pull an image from a registry.
+- docker build -t TAG .: Build an image from a Dockerfile.
+- docker rmi IMAGE: Remove an image.
+
+📌 Networking:
+- docker network ls: List networks.
+- docker network create NETWORK: Create a network.
+- docker network connect NETWORK CONTAINER: Connect a container to a network.
+- docker network disconnect NETWORK CONTAINER: Disconnect a container from a network.
+
+📌 Volumes:
+- docker volume ls: List volumes.
+- docker volume create VOLUME: Create a volume.
+- docker volume rm VOLUME: Remove a volume.
+
+📌 Docker Compose:
+- docker-compose up: Start services defined in a Compose file.
+- docker-compose down: Stop services defined in a Compose file.
+- docker-compose build: Build or rebuild services.
+- docker-compose logs: View output from services.
+
+📌 Inspect & Logs:
+- docker inspect CONTAINER/IMAGE: Display detailed information.
+- docker logs CONTAINER: Fetch the logs of a container.
+- docker exec -it CONTAINER bash: Access a running container.
+
+=================================================================================================================================================================
+Real-time troubleshooting in Docker:
+
+1. Question: How would you free up disk space on a Docker host? 
+Answer: Remove unused containers with: docker container prune
+Remove unused images (dangling and unreferenced): docker image prune -a
+Remove unused volumes: docker volume prune
+Clean up unused networks: docker network prune
+If you need to reclaim space from stopped containers, old images, and other objects in one go: docker system prune -a
+
+2. Question: How would you troubleshoot and debug a running Docker container?
+Answer: Access the container’s shell using: docker exec -it <container_name> /bin/
+Check container logs using: docker logs <container_name>
+Inspect the container’s state with: docker inspect <container_name>
+
+3.  How would you troubleshoot and resolve network connectivity issues between Docker containers?
+Answer: Verify network configuration using: docker network inspect <network_name>
+Check connectivity between containers using: docker exec -it <container_name> ping <other_container_ip_or_name>
+If DNS resolution is failing, ensure you are using the correct container names, as Docker provides built-in DNS resolution for containers on the same network.
+
+4. Question: How would you investigate and resolve a container that continuously restarts?
+Answer: Examine the logs using: docker logs <container_name>
+Use the docker inspect command to check the container’s restart policy: docker inspect <container_name> | grep RestartPolicy
+You may need to adjust the policy to avoid endless restarts: docker run --restart=on-failure:3 <container_image>
+
+5. Question: What steps would you take to secure a Docker container?
+Answer: Avoid running applications as root inside the container. In the Dockerfile, create a non-root user and set it: RUN useradd -ms /bin/ myuser && USER myuser
+Enable user namespaces to map container users to different users on the host.
+Only expose the necessary ports and limit external access with firewall rules. You can also use Docker’s bridge network mode for isolation.
+
+6. Question: How would you roll back to a previous Docker image version?
+Answer: If you tagged the previous image version properly, you can start the container with the old version: docker run -d my_image:previous_version
+If the old image is still present on the system, you can list all available images and their tags using: docker images
+Then, run the older version using its image ID: docker run -d <image_id>
+
+7. Question: How would you force stop a Docker container that refuses to stop?
+Answer: Attempt a graceful stop: docker stop <container_name>
+If the container does not stop after the default timeout, you can forcibly kill it using: docker kill <container_name>
+If the issue persists and the container is unresponsive, you can investigate deeper using docker inspect to see if there are resource constraints or issues with the container’s process. Additionally, check the system's logs for any low-level kernel issues that may be affecting Docker.
+
+8. Question: How would you limit CPU and memory usage of a Docker container?
+Answer: You can limit CPU usage by using the --cpus flag: docker run --cpus="1.5" my_container 
+To limit memory usage, use the --memory flag: docker run --memory="512m" my_container
+You can also combine both CPU and memory limits for stricter control: docker run --cpus="1" --memory="512m" my_container
+
+9. Question: How would you optimize the Docker image size?
+Answer: Use a minimal base image like alpine, which is smaller in size compared to ubuntu or debian. Ensure multi-stage builds are implemented. Clean up apt-get or yum caches after installing packages. Use .dockerignore to exclude unnecessary files such as test data or local configuration files. Combine commands using && to reduce the number of layers in the final image.
+
+10. Question: Why does the container exit immediately after it starts, and how would you troubleshoot this?
+Answer: Check the logs using docker logs <container_name> to see if there is any error or termination reason. Make sure the container is running a long-running process, such as a web server or tail -f /dev/null, if testing. If using a custom script, ensure the script has proper error handling and logging.
+
+11. Question: How would you resolve a Docker container failing to start due to a port conflict?
+Answer: Identify which process is using the port by running lsof -i :80 or netstat -tuln | grep 80. If you need to bind to another port on the host, you can do this using the -p option in Docker: docker run -d -p 8080:80 my_container
+
+12. Question: What are the steps you would take to troubleshoot connectivity issues to a Docker container from the host?
+Answer: Ensure the container is running: docker ps.
+Check if the container port is mapped to the host using docker port <container_id>. Verify network access using curl or telnet to check if the port is open and responding.
+
+13. Question: How would you prevent data loss between Docker container restarts?
+Answer: Use Docker volumes to store data outside the container’s writable layer. This ensures that data is preserved even if the container is stopped or deleted. docker run -d -v /host/data:/container/data my_container This binds a directory from the host (/host/data) to a directory in the container (/container/data). Alternatively, use Docker-managed volumes: docker run -d -v my_volume:/container/data my_container
+
+14. Question: How would you handle dependency issues during Docker image builds?
+Answer: Ensure all required dependencies are listed in the Dockerfile and installed before they are needed. Use a package manager (e.g., apt-get, yum, or pip) to install dependencies in the correct order. For language-specific dependencies (e.g., Node.js, Python), make sure the required package files (package.json, requirements.txt) are copied into the image before running installation commands.
+
+=================================================================================================================================================================
