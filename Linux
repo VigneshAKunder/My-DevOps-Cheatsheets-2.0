@@ -1,0 +1,1344 @@
+Learn Linux for free → linuxopsys.com
+
+LINUX BASIC COMMANDS: 
+
+1 – SYSTEM INFORMATION
+Display Linux system information
+uname -a
+
+Display kernel release information
+uname -r
+
+Show operating system information such as distribution name and version
+cat /etc/os-release
+
+Show how long the system has been running + load
+uptime
+
+Show system host name
+hostname
+
+Display all local IP addresses of the host.
+hostname -I
+
+Show system reboot history
+last reboot
+
+Show the current date and time
+date
+
+Show this month's calendar
+cal
+
+Display who is online
+w
+
+Who you are logged in as
+whoami
+
+2 – HARDWARE INFORMATION
+Display messages in kernel ring buffer
+dmesg
+
+Display CPU information
+cat /proc/cpuinfo
+
+Display memory information
+cat /proc/meminfo
+
+Display free and used memory ( -h for human readable, -m for MB, -g for GB.)
+free -h
+
+Display PCI devices
+lspci -tv
+
+Display USB devices
+lsusb -tv
+
+Display DMI/SMBIOS (hardware info) from the BIOS
+dmidecode
+
+Show info about disk sda
+hdparm -i /dev/sda
+
+Perform a read speed test on disk sda
+hdparm -tT /dev/sda
+
+Test for unreadable blocks on disk sda
+badblocks -s /dev/sda
+
+3 – PERFORMANCE MONITORING AND STATISTICS
+Display and manage the top processes
+top
+
+Interactive process viewer (top alternative)
+htop
+
+Display processor related statistics
+mpstat 1
+
+Display virtual memory statistics
+vmstat 1
+
+Display I/O statistics
+iostat 1
+
+Display the last 100 syslog messages (Use /var/log/syslog for Debian based systems.)
+tail -100 /var/log/messages
+
+Capture and display all packets on interface eth0
+tcpdump -i eth0
+
+Monitor all traffic on port 80 ( HTTP )
+tcpdump -i eth0 'port 80'
+
+List all open files on the system
+lsof
+
+List files opened by user
+lsof -u user
+
+Display free and used memory ( -h for human readable, -m for MB, -g for GB.)
+free -h
+
+Execute "df -h", showing periodic updates
+watch df -h
+
+4 – USER INFORMATION AND MANAGEMENT
+Display the user and group ids of your current user.
+id
+
+Display the last users who have logged onto the system.
+last
+
+Show who is logged into the system.
+who
+
+Show who is logged in and what they are doing.
+w
+
+Create a group named "test".
+groupadd test
+
+Create an account named john, with a comment of "John Smith" and create the user's home directory.
+useradd -c "John Smith" -m john
+
+Delete the john account.
+userdel john
+
+Add the john account to the sales group
+usermod -aG sales john
+
+5 – FILE AND DIRECTORY COMMANDS
+List all files in a long listing (detailed) format
+ls -al
+
+Display the present working directory
+pwd
+
+Create a directory
+mkdir directory
+
+Remove (delete) file
+rm file
+
+Remove the directory and its contents recursively
+rm -r directory
+
+Force removal of file without prompting for confirmation
+rm -f file
+
+Forcefully remove directory recursively
+rm -rf directory
+
+Copy file1 to file2
+cp file1 file2
+
+Copy source_directory recursively to destination. If destination exists, copy source_directory into destination, otherwise create destination with the contents of source_directory.
+cp -r source_directory destination
+
+Rename or move file1 to file2. If file2 is an existing directory, move file1 into directory file2
+mv file1 file2
+
+Create symbolic link to linkname
+ln -s /path/to/file linkname
+
+Create an empty file or update the access and modification times of file.
+touch file
+
+View the contents of file
+cat file
+
+Browse through a text file
+less file
+
+Display the first 10 lines of file
+head file
+
+Display the last 10 lines of file
+tail file
+
+Display the last 10 lines of file and "follow" the file as it grows.
+tail -f file
+
+6 – PROCESS MANAGEMENT
+Display your currently running processes
+ps
+
+Display all the currently running processes on the system.
+ps -ef
+
+Display process information for processname
+ps -ef | grep processname
+
+Display and manage the top processes
+top
+
+Interactive process viewer (top alternative)
+htop
+
+Kill process with process ID of pid
+kill pid
+
+Kill all processes named processname
+killall processname
+
+Start program in the background
+program &
+
+Display stopped or background jobs
+bg
+
+Brings the most recent background job to foreground
+fg
+
+Brings job n to the foreground
+fg n
+
+7 – FILE PERMISSIONS
+Linux chmod example
+
+PERMISSION	EXAMPLE
+-U- -G- -W-	sample command
+rwx rwx rwx	chmod 777 filename
+rwx rwx r-x	chmod 775 filename
+rwx r-x r-x	chmod 755 filename
+rw- rw- r--	chmod 664 filename
+rw- r-- r--	chmod 644 filename
+NOTE: Use 777 sparingly!
+LEGENDS
+U = User
+G = Group
+W = World
+r = Read
+w = write
+x = execute
+- = no access
+
+8 – NETWORKING
+Display all network interfaces and IP address
+ip a
+
+Display eth0 address and details
+ip addr show dev eth0
+
+Query or control network driver and hardware settings
+ethtool eth0
+
+Send ICMP echo request to host
+ping host
+
+Display whois information for domain
+whois domain
+
+Display DNS information for domain
+dig domain
+
+Reverse lookup of IP_ADDRESS
+dig -x IP_ADDRESS
+
+Display DNS IP address for domain
+host domain
+
+Display the network address of the host name.
+hostname -i
+
+Display all local IP addresses of the host.
+hostname -I
+
+Download http://domain.com/file
+wget http://domain.com/file
+
+Display listening tcp and udp ports and corresponding programs
+netstat -nutlp
+
+9 – ARCHIVES (TAR FILES)
+Create tar named archive.tar containing directory.
+tar cf archive.tar directory
+
+Extract the contents from archive.tar.
+tar xf archive.tar
+
+Create a gzip compressed tar file name archive.tar.gz.
+tar czf archive.tar.gz directory
+
+Extract a gzip compressed tar file.
+tar xzf archive.tar.gz
+
+Create a tar file with bzip2 compression
+tar cjf archive.tar.bz2 directory
+
+Extract a bzip2 compressed tar file.
+tar xjf archive.tar.bz2
+
+10 – INSTALLING PACKAGES
+Search for a package by keyword.
+yum search keyword
+
+Install package.
+yum install package
+
+Display description and summary information about package.
+yum info package
+
+Install package from local file named package.rpm
+rpm -i package.rpm
+
+Remove/uninstall package.
+yum remove package
+
+Install software from source code.
+tar zxvf sourcecode.tar.gz
+cd sourcecode
+./configure
+make
+make install
+
+11 – SEARCH
+Search for pattern in file
+grep pattern file
+
+Search recursively for pattern in directory
+grep -r pattern directory
+
+Find files and directories by name
+locate name
+
+Find files in /home/john that start with "prefix".
+find /home/john -name 'prefix*'
+
+Find files larger than 100MB in /home
+find /home -size +100M
+
+12 – SSH LOGINS
+Connect to host as your local username.
+ssh host
+
+Connect to host as user
+ssh user@host
+
+Connect to host using port
+ssh -p port user@host
+
+13 – FILE TRANSFERS
+Secure copy file.txt to the /tmp folder on server
+scp file.txt server:/tmp
+
+Copy *.html files from server to the local /tmp folder.
+scp server:/var/www/*.html /tmp
+
+Copy all files and directories recursively from server to the current system's /tmp folder.
+scp -r server:/var/www /tmp
+
+Synchronize /home to /backups/home
+rsync -a /home /backups/
+
+Synchronize files/directories between the local and remote system with compression enabled
+rsync -avz /home server:/backups/
+
+14 – DISK USAGE
+Show free and used space on mounted filesystems
+df -h
+
+Show free and used inodes on mounted filesystems
+df -i
+
+Display disks partitions sizes and types
+fdisk -l
+
+Display disk usage for all files and directories in human readable format
+du -ah
+
+Display total disk usage off the current directory
+du -sh
+
+15 – DIRECTORY NAVIGATION
+To go up one level of the directory tree. (Change into the parent directory.)
+cd ..
+
+Go to the $HOME directory
+cd
+
+Change to the /etc directory
+cd /etc
+
+16 – SECURITY
+Change the current user's password.
+passwd
+
+Switch to the root account with root's environment. (Login shell.)
+sudo -i
+
+Execute your current shell as root. (Non-login shell.)
+sudo -s
+
+List sudo privileges for the current user.
+sudo -l
+
+Edit the sudoers configuration file.
+visudo
+
+Display the current SELinux mode.
+getenforce
+
+Display SELinux details such as the current SELinux mode, the configured mode, and the loaded policy.
+sestatus
+
+Change the current SELinux mode to Permissive. (Does not survive a reboot.)
+setenforce 0
+
+Change the current SELinux mode to Enforcing. (Does not survive a reboot.)
+setenforce 1
+
+Set the SELinux mode to enforcing on boot by using this setting in the /etc/selinux/config file.
+SELINUX=enforcing
+
+Set the SELinux mode to permissive on boot by using this setting in the /etc/selinux/config file.
+SELINUX=permissive
+
+Set the SELinux mode to disabled on boot by using this setting in the /etc/selinux/config file.
+SELINUX=disabled
+
+17 – LOGGING AND AUDITING
+Display messages in kernel ring buffer.
+dmesg
+
+Display logs stored in the systemd journal.
+journalctl
+
+Display logs for a specific unit (service).
+journalctl -u servicename
+
+=================================================================================================================================================================
+
+📂 𝟭. 𝗙𝗶𝗹𝗲 𝗮𝗻𝗱 𝗗𝗶𝗿𝗲𝗰𝘁𝗼𝗿𝘆 𝗠𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁 🗂️
+- 𝚕𝚜: List files and directories in the current location
+- 𝚙𝚠𝚍: Display the current working directory path
+- 𝚌𝚍: Navigate between directories
+- 𝚖𝚔𝚍𝚒𝚛: Create new directories
+- 𝚛𝚖𝚍𝚒𝚛: Remove empty directories
+- 𝚝𝚘𝚞𝚌𝚑: Create new files
+- 𝚌𝚙: Duplicate files or directories
+- 𝚖𝚟: Move or rename files and directories
+- 𝚛𝚖: Delete files or directories
+
+🔧 𝟮. 𝗣𝗿𝗼𝗰𝗲𝘀𝘀 𝗠𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁
+- 𝚙𝚜: View running processes
+- 𝚝𝚘𝚙: Monitor active processes in real-time
+- 𝚑𝚝𝚘𝚙: Interact with processes using a user-friendly interface
+- 𝚔𝚒𝚕𝚕: Stop a specific process
+- 𝚔𝚒𝚕𝚕𝚊𝚕𝚕: Terminate all occurrences of a process
+- 𝚙𝚜𝚝𝚛𝚎𝚎: Visualize processes in a hierarchical tree structure 🌲
+
+👥 𝟯. 𝗨𝘀𝗲𝗿 𝗮𝗻𝗱 𝗚𝗿𝗼𝘂𝗽 𝗠𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁
+- 𝚙𝚊𝚜𝚜𝚠𝚍: Update user passwords
+- 𝚞𝚜𝚎𝚛𝚊𝚍𝚍: Create new users
+- 𝚞𝚜𝚎𝚛𝚍𝚎𝚕: Remove users
+- 𝚐𝚛𝚘𝚞𝚙𝚜: List groups a user belongs to
+- 𝚞𝚜𝚎𝚛𝚖𝚘𝚍: Modify user account details
+- 𝚒𝚍: Show user and group information
+- 𝚐𝚛𝚘𝚞𝚙𝚊𝚍𝚍: Create new groups
+- 𝚐𝚛𝚘𝚞𝚙𝚍𝚎𝚕: Remove groups
+
+💾 𝟰. 𝗦𝘆𝘀𝘁𝗲𝗺 𝗜𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻 🖥️
+- 𝚞𝚗𝚊𝚖𝚎: Display system details
+- 𝚍𝚏: Check disk space usage
+- 𝚍𝚞: Estimate file and directory sizes
+- 𝚏𝚛𝚎𝚎: Show available memory
+- 𝚕𝚜𝚌𝚙𝚞: Provide CPU architecture information
+- 𝚕𝚜𝚑𝚠: List hardware components
+- 𝚕𝚜𝚋𝚕𝚔: Display block devices
+
+🌐 𝟱. 𝗡𝗲𝘁𝘄𝗼𝗿𝗸 𝗖𝗼𝗻𝗳𝗶𝗴𝘂𝗿𝗮𝘁𝗶𝗼𝗻 𝗮𝗻𝗱 𝗠𝗼𝗻𝗶𝘁𝗼𝗿𝗶𝗻𝗴 🕸️
+- 𝚒𝚏𝚌𝚘𝚗𝚏𝚒𝚐: Manage network interfaces
+- 𝚒𝚙: Control routing, devices, and tunnels
+- 𝚙𝚒𝚗𝚐: Verify network connectivity
+- 𝚗𝚎𝚝𝚜𝚝𝚊𝚝: Analyze network statistics
+- 𝚜𝚜: Investigate socket connections
+- 𝚝𝚛𝚊𝚌𝚎𝚛𝚘𝚞𝚝𝚎: Track packet routes and delays
+- 𝚜𝚜𝚑: Establish secure remote connections
+- 𝚗𝚌: Swiss army knife for TCP/IP networking
+
+📦 𝟲. 𝗣𝗮𝗰𝗸𝗮𝗴𝗲 𝗠𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁 📥📤
+- 𝚊𝚙𝚝-𝚐𝚎𝚝, 𝚊𝚙𝚝: Manage packages on Debian-based systems
+- 𝚢𝚞𝚖, 𝚍𝚗𝚏: Handle packages on RPM-based systems
+- 𝚛𝚙𝚖: Manage RPM packages
+- 𝚍𝚙𝚔𝚐: Manage Debian packages
+- 𝚜𝚗𝚊𝚙: Work with the universal Linux package system
+- 𝚣𝚢𝚙𝚙𝚎𝚛: Manage packages on openSUSE
+
+📜 𝟳. 𝗙𝗶𝗹𝗲 𝗩𝗶𝗲𝘄𝗶𝗻𝗴 𝗮𝗻𝗱 𝗘𝗱𝗶𝘁𝗶𝗻𝗴 📝
+- 𝚌𝚊𝚝: Display file contents
+- 𝚕𝚎𝚜𝚜: View files with navigation controls
+- 𝚖𝚘𝚛𝚎: Another file viewing tool
+- 𝚟𝚒𝚖: Use the powerful Vim text editor
+- 𝚐𝚎𝚍𝚒𝚝: Edit files using the GNOME text editor
+- 𝚗𝚊𝚗𝚘: Edit files with the user-friendly Nano editor
+
+=================================================================================================================================================================
+
+In Linux file permissions: 
+
+In Linux, file permissions control how users and groups can access and modify files and directories. Understanding these permissions is crucial for system security and data integrity.
+
+There are three basic types of permissions in Linux:
+
+ Read (r): Allows users to view the contents of a file.
+
+ Write (w): Allows users to modify the contents of a file.
+
+ Execute (x): Allows users to execute a file (if it's a program) or list the contents of a directory.
+
+These permissions apply to three categories of users:
+ Owner: Theof us user who created the file.
+ Group: A group ers assigned to the file.
+ Others: All other users on the system.
+ 
+File permissions are represented by a string of characters, typically displayed using the ls -l command. 
+
+Let's break down how to interpret this string:
+
+ The first character: Indicates if it's a file (regular file denoted by '-') or a directory (represented by 'd').
+
+ The next three characters: Represent the owner's permissions (read, write, execute).
+
+ The next three characters: Represent the group's permissions.
+
+ The last three characters: Represent the permissions for others.
+
+Understanding file permissions is essential for maintaining system security in Linux. By setting appropriate permissions, you can restrict access to sensitive data and ensure the smooth operation of your system. 
+
+=================================================================================================================================================================
+
+To Understand about Linux need to know about it's file structure.
+In linux each directory is unique. 
+below are the main Linux directories.
+
+Linux File structure:
+--------------------
+- file structure represents the flow of the Operating System.
+- means what are the operations going on with particular Directory.
+
+/ ->it is parent directory of all directories.
+/root ->root user home directory
+/bin ->binary information store here
+/sbin ->system binary information
+/boot ->booting directory
+/dev ->devices information here
+/etc ->all configurations stored here
+/mnt ->mount directory
+/opt ->optional apps 
+/proc ->process information stores here
+/sys ->system information 
+/src ->service related information.
+/var ->variable directory
+/usr ->user applications
+/media ->removable media information
+/tmp ->temporary directory
+/home ->users home directory
+
+=================================================================================================================================================================
+☄️ Top 79 Linux commands that are commonly used in DevOps: ♾
+1. ls: List directory contents
+2. cd: Change directory
+3. pwd: Print working directory
+4. mkdir: Create a directory
+5. touch: Create a file
+6. cp: Copy files and directories
+7. mv: Move or rename files and directories
+8. rm: Remove files and directories
+9. find: Search for files and directories
+10. grep: Search for patterns in files
+11. cat: Concatenate and display files
+12. less: View file contents page by page
+13. head: Display the first lines of a file
+14. tail: Display the last lines of a file
+15. vi/vim: Text editor 
+16. nano: Text editor
+17. tar: Archive and compress files
+18. gzip: Compress files
+19. gunzip: Decompress files
+20. wget: Download files from the web
+21. curl: Transfer data to or from a server
+22. ssh: Secure shell remote login
+23. scp: Securely copy files between hosts
+24. chmod: Change file permissions
+25. chown: Change file ownership
+26. chgrp: Change group ownership
+27. ps: Display running processes
+28. top: Monitor system resources and processes
+29. kill: Terminate processes
+30. df: Display disk space usage
+31. du: Estimate file and directory space usage
+32. free: Display memory usage
+33. uname: Print system information
+34. ifconfig: Configure network interfaces
+35. ping: Test network connectivity
+36. netstat: Network statistics
+37. iptables: Firewall administration
+38. systemctl: Manage system services
+39. journalctl: Query the system journal
+40. crontab: Schedule cron jobs
+41. useradd: Create a user account
+42. passwd: Change user password
+43. su: Switch user
+44. sudo: Execute a command as another user
+45. usermod: Modify user account
+46. groupadd: Create a group
+47. groupmod: Modify a group
+48. id: Print user and group information
+49. ssh-keygen: Generate SSH key pairs
+50. rsync: Synchronize files and directories
+51. diff: Compare files line by line
+52. patch: Apply a patch to files
+53. tar: Extract files from an archive
+54. curl: Perform HTTP requests
+55. nc: Netcat - networking utility
+56. wget: Download files from the web
+57. whois: Lookup domain registration details
+58. dig: DNS lookup utility
+59. sed: Stream editor for text manipulation
+60. awk: Pattern scanning and processing language
+61. sort: Sort lines in a text file
+62. cut: Extract sections from lines of files
+63. wc: Word, line, character, and byte count
+64. tee: Redirect output to multiple files or commands
+65. history: Command history
+66. source: Execute commands from a file in the current shell
+67. alias: Create command aliases
+68. ln: Create links between files
+69. uname: Print system information
+70. lsof: List open files and processes
+71. mkfs: Create a file system
+72. mount: Mount a file system
+73. umount: Unmount a file system
+74. ssh-agent: Manage SSH keys in memory
+75. grep:Search for patterns in files
+76. tr:Translate characters
+77. cut:Select portions of lines from files
+78. paste:Merge lines of files
+79. uniq: Report or omit repeated lines
+
+=================================================================================================================================================================
+Linux commands that are commonly used in DevOps: ♾
+
+1. ls: List directory contents
+2. cd: Change directory
+3. pwd: Print working directory
+4. mkdir: Create a directory
+5. touch: Create a file
+6. cp: Copy files and directories
+7. mv: Move or rename files and directories
+8. rm: Remove files and directories
+9. find: Search for files and directories
+10. grep: Search for patterns in files
+11. cat: Concatenate and display files
+12. less: View file contents page by page
+13.head: Display the first lines of a file
+14. tail: Display the last lines of a file
+15. vi/vim: Text editor
+16. nano: Text editor
+17. tar: Archive and compress files
+18. gzip: Compress files
+19. gunzip: Decompress files
+20. wget: Download files from the web
+21. curl: Transfer data to or from a server
+22. ssh: Secure shell remote login
+23. scp: Securely copy files between hosts
+24. chmod: Change file permissions
+25. chown: Change file ownership
+26. chgrp: Change group ownership
+27. ps: Display running processes
+28. top: Monitor system resources and processes
+29. kill: Terminate processes
+30. df: Display disk space usage
+31. du: Estimate file and directory space usage
+32. free: Display memory usage
+33. uname: Print system information
+34. ifconfig: Configure network interfaces
+35. ping: Test network connectivity
+36. netstat: Network statistics
+37. iptables: Firewall administration
+38. systemctl: Manage system services
+39. journalctl: Query the system journal
+40. crontab: Schedule cron jobs
+
+=================================================================================================================================================================
+1. How would you optimize the performance of a Linux server under high load conditions?
+2. Explain the process of configuring SELinux for a web server.
+3. How do you troubleshoot a kernel panic on a Linux system?
+4. Describe how you would implement and manage a high-availability cluster on Linux.
+5. How do you set up and configure a Load Balancer on a Linux server?
+6. Explain the differences between cgroups and namespaces in Linux containers.
+7. How do you analyze and tune network performance in Linux?
+8. What steps would you take to secure a Linux server from unauthorized access?
+9. Explain the process of setting up a LAMP stack for a high-traffic web application.
+10. How do you handle disk I/O bottlenecks in a Linux environment?
+11. Describe the process of compiling and installing a custom kernel.
+12. How do you configure and manage a RAID array in Linux?
+13. Explain the use of the `strace` and `ltrace` commands for debugging applications.
+14. How do you manage and rotate log files using `logrotate`?
+15. Describe how you would configure and manage a centralized logging system using syslog or rsyslog.
+16. How do you set up and manage Docker containers on a Linux server?
+17. Explain the process of setting up automated backups on a Linux system.
+18. How do you use iptables to create complex firewall rules?
+19. Describe how you would set up a secure VPN on a Linux server.
+20. How do you troubleshoot and resolve DNS issues on a Linux system? 
+
+=================================================================================================================================================================
+Linux File System - Essential Directories 
+
+Here’s a quick guide to the key root directories and their purposes:
+
+ /bin: Essential binaries for system boot and basic functions. Programs like bash and login reside here.
+
+ /boot: Core assets needed to boot the system (e.g., bootloader, Linux Kernel Image).
+
+ /proc: Virtual filesystem for running processes. Contains process-specific directories. Explore but don’t change anything.
+
+ /var: Files of variable size/content.
+Logs: /var/log
+Web server assets: /var/www/html
+
+ /mnt: Manually mounted devices.
+
+ /media: Automatically mounted devices (e.g., USB drives).
+
+ /dev: Files for all devices.
+e.g. /dev/sda1 for new EBS volumes.
+e.g. /dev/null for discarding output.
+
+ /etc: System-wide configurations and boot scripts. Text-only and human-readable.
+
+ /tmp: Temporary files, cleaned out on reboot. Do not store important data here.
+
+ /lib: Libraries for programs in /bin.
+Variation: /usr/lib for user-space programs.
+
+ /root: Home directory for the root user. Normal users may not have access.
+
+ /usr: Programs for Linux users.
+Tip: Explore /usr/bin for user-space programs.
+
+ /home: Home directories for regular users.
+e.g. /home/shadan for user "shadan".
+Access to other users directories depends on permissions.
+
+=================================================================================================================================================================
+Linux commands:
+
+# Download files from the internet using HTTP, HTTPS, or FTP
+wget https://lnkd.in/gmq4h-VB
+
+# Fetch a URL using HTTP 
+curl http://example.com
+
+# Capture network packets and display them in real-time
+tcpdump -i eth0 port 80
+
+# Check connectivity to a host
+ping hostname 
+
+# Synchronize files and directories between two locations
+rsync -avz /source/dir/ /dest/dir/
+
+# Securely copy files between hosts
+scp user@remote:/path/to/file /local/path
+
+# Compress files into a .tar.gz archive
+tar -czvf archive.tar.gz /path/to/directory
+
+# Extract files from a .tar.gz archive
+tar -xzvf archive.tar.gz
+
+# Restart the machine immediately
+shutdown -r now
+
+# Displays all the environment variables of the Linux system.
+printenv
+
+# Shows the exit status of the last executed command (0 - success, 1-255 - error/failure).
+echo $?
+
+# Monitor system processes and resource usage
+top
+
+# Display a list of processes
+ps aux
+
+# Kill a process by ID
+kill -9 1234
+
+# Display routing table and network interfaces
+netstat -r
+
+# Show the status of network interfaces
+ifconfig -a
+
+# Display open ports and established connections
+ss -tuln
+
+# Test connectivity to another host
+ping google.com
+
+# Trace the path packets take to a network host
+traceroute google.com
+
+# Check disk space usage
+df -h
+
+# Check disk usage by files and directories
+du -sh /path/to/directory
+
+# Find files by name
+find / -name "filename"
+
+# Find all directories with a .yml extension and remove them, with confirmation of each deletion
+find * -name *.yml -type d | xargs -t -n1 rm -rf
+
+# Search for a pattern in files
+grep "pattern" /path/to/file
+
+# Search for a pattern recursively in a directory
+grep -r "pattern" /path/to/directory
+
+# Show real-time system log updates
+tail -f /var/log/syslog
+
+# Change file permissions
+chmod 755 /path/to/file
+
+# Change file owner
+chown user:group /path/to/file
+
+# Create symbolic links
+ln -s /path/to/target /path/to/link
+
+# Show detailed information about files and directories
+stat /path/to/file
+
+# Create a new user
+useradd username
+
+# Change user password
+passwd username
+
+# Compress files using gzip
+gzip filename 
+
+# Decompress files using gzip 
+gunzip filename.gz
+
+# Search for a pattern in files
+grep "pattern" filename
+
+For complete list of Linux commands: https://lnkd.in/gDqch2b3
+
+=================================================================================================================================================================
+Essential Linux Commands for DevOps
+
+🔹 1. Run a Task in the Background:
+Command: nohup
+Usage: Keep a task or script running in the background, even if you close your terminal.
+
+🔹 2. Kernel-Related Messages:
+Command: dmesg
+Usage: Display kernel-related messages, including hardware and system startup logs.
+
+🔹 3. List Physical Volumes:
+Command: lvs
+Usage: Show currently configured physical volumes in your system.
+
+🔹 4. Display Memory Usage:
+Command: free
+Usage: Check memory usage, including swap space details.
+
+🔹 5. Find Large Home Directories:
+Command: du
+Usage: Determine which user’s home directory is consuming the most disk space.
+
+🔹 6. Check Linux File System:
+Command: lsblk -f
+Usage: Display detailed information about your Linux file system.
+
+🔹 7. Sort File Contents:
+Command: sort -r
+Usage: Sort the contents of a file in reverse order for easy review.
+
+🔹 8. Display Unique File Content:
+Command: sort file | uniq
+Usage: Filter out duplicate lines to show only unique content from a file.
+
+🔹 9. Search Multiple Words:
+Command: egrep "word1|word2"
+Usage: Search for multiple words in a file and display all matching content.
+
+🔹 10. Count Lines in a File:
+Command: wc -l
+Usage: Quickly count the number of lines in a file.
+
+🔹 11. Compare Two Files:
+Command: cmp
+Usage: Check if two files are identical, highlighting any differences.
+
+🔹 12. Show Differences Between Files:
+Command: diff -u
+Usage: Display detailed differences between two files.
+
+🔹 13. Record Terminal Activity:
+Command: script
+Usage: Record your terminal session activities into a file for future reference.
+
+🔹 14. Display Starting Two Characters of All Lines:
+Command: cut -c1-2
+Usage: Show the first two characters of each line in a file.
+
+🔹 15. Display a Specific Line from a File:
+Command: sed -n '5p'
+Usage: Display a specific line, such as line 5, from a file.
+
+🔹 16. Replace Specific Word in a File:
+Command: sed -n 's/from/to/g'
+Usage: Replace all occurrences of a specific word within a file.
+
+🔹 17. Extend File Size Without Adding Data:
+Command: truncate -s 100M
+Usage: Extend a file’s size (e.g., to 100MB) without adding any actual data.
+
+🔹 18. Check CPU/Core/Thread Info:
+Command: lscpu
+Usage: Display detailed information about the CPU, cores, and threads on your Linux server.
+
+List files sorted by size:
+$ ls -laSh
+=================================================================================================================================================================
+Essential tool for scheduling tasks in Linux.
+
+What is cron?
+-->cron is a time-based job scheduler in Unix-like operating systems, including Linux. It allows users to schedule jobs (commands or scripts) to run automatically at specified times or intervals. These scheduled tasks are called "cron jobs."
+Understanding crontab
+-->crontab (short for "cron table") is a configuration file that specifies the schedule of cron jobs for individual users or the system. Each line in a crontab file represents a task and its corresponding schedule.
+crontab Syntax
+-->A typical crontab entry has the following structure:
+
+* * * * * script/command/to/execute 
+* * * * *
+* * * * +---- Day of the week (0 - 7) (Sunday is both 0 and 7)
+* * * +------ Month (1 - 12)
+* * +-------- Day of the month (1 - 31)
+* +---------- Hour (0 - 23)
++------------ Minute (0 - 59)
+
+Each asterisk ("*") represents a time or date field, and the fields are separated by spaces. Here's what each field means:
+
+1. Minute : The minute of the hour when the job will run (0-59).
+2. Hour : The hour of the day when the job will run (0-23).
+3. Day of the Month : The day of the month when the job will run (1-31).
+4. Month : The month of the year when the job will run (1-12).
+5. Day of the Week : The day of the week when the job will run (0-7), where both 0 and 7 represent Sunday.
+
+Special Symbols in Crontab
+1.     "*" : Wildcard, meaning "every possible value" for that field.
+2.     "," : Separator, allows you to specify multiple values (e.g., "1,15" in the Day of the Month field means the 1st and 15th).
+3.     "-" : Range, specifies a range of values (e.g., "1-5" in the Day of the Week field means Monday to Friday).
+4.     "/" : Step, allows you to specify intervals (e.g., "*/2" in the Minute field means every 2 minutes).
+
+Example Crontab Entries:
+
+1. **Run a script every day at 2:30 AM:**
+ 30 2 * * * /path/to/script.sh
+2. **Run a backup every Sunday at midnight:**
+ 0 0 * * 0 /path/to/backup.sh
+3. **Run a command every 15 minutes:**
+ */15 * * * * /path/to/command
+4. **Run a job every weekday at 6:00 PM:**
+ 0 18 * * 1-5 /path/to/job.sh
+
+Managing Crontab Files
+- View Crontab :  crontab -l
+- Edit Crontab : crontab -e
+- Remove Crontab : crontab -r
+
+
+System-wide Crontab
+In addition to user-specific "crontab" files, there are system-wide cron jobs located in "/etc/crontab". This file contains jobs for all users and has an extra field specifying which user to run the job as:
+* * * * * username command_to_execute
+
+Log and Debugging
+- Cron Logs: The cron daemon logs its activity, typically found in  “/var/log/syslog” on most systems. You can view logs with:
+ grep cron /var/log/syslog
+ 
+Output Redirection**: By default, cron does not produce any output. To capture the output of a cron job, you can redirect it to a file:
+ * * * * * /path/to/script.sh > /path/to/logfile 2>&1
+ Here, `2>&1` redirects both standard output and standard error to the same file.
+
+=================================================================================================================================================================
+Linux commands that Linux sysadmins regularly use:
+=================================================
+1. ip - used to show or manipulate routing, devices, and tunnels. 
+2. ls - list the contents of a directory.
+3. df - Displays the amount of disk space used.
+4. du - display a list of all the files along with their respective sizes.
+5. free - use to get a detailed report on the system's memory usage.
+6. scp - securely copy files or directories over ssh.
+7. find - locates files using user-defined criteria.
+8. ncdu - provides a useful and convenient way to view disk usage.
+9. pstree - used to show running processes in a tree (data structure).
+10. latest - displays a list of the most recently logged-in people.
+11. w – display a list of the currently logged-in user sessions.
+12. grep - searches a file for a pattern of characters and displays all lines that match.
+13. awk - a scripting language used for text processing.
+14. sed - stream editor used to perform lots of functions on files, like searching, find and replace, insertion, or deletion.
+15. cut - allows you to cut out sections of a specified file or piped data and print the result to standard output.
+16. sort - used to sort files.
+17. uniq - used to extract uniq occurences.
+18. tr - utility for translating or deleting characters.
+19. diff - used to display differences in files by comparing line by line.
+20. uptime – displays the system uptime as well as the load average.
+21. top – shows a real-time view of running processes in Linux.
+22. vmstat - used to obtain information about memory, system processes, paging, interrupts, block I/O, disk, and CPU scheduling. 
+23. htop - a process viewer and manager that is interactive.
+24. dstat - allows you to view all of your system resources instantly. All-in-one vmstat, iostat, netstat, and ifstat utility.
+25.. Iftop is a network traffic viewer.
+26. nethogs - is a network traffic analyzer.
+27. iotop - is an interactive I/O viewer. Get a snapshot of storage r/w activity.
+28. iostat - provides statistics on storage I/O.
+29. netstat -used to show network statistics.
+30. ss - ss command is a simpler and faster version of the now obsolete netstat command.
+31. atop – a tool for monitoring system resources in Linux. 
+32. ssh – secure protocol used as the primary means of connecting to Linux servers remotely.
+33. sudo - run commands with administrative privileges.
+34. cd – navigate between directories.
+35. pwd – displays the current directory path.
+36. cp - copy files and directories.
+37. mv – move file or directories.
+38. rm – deletes files and directories.
+39. mkdir - create new directories.
+40. touch – used to create, update a computer file or directory's access and modification dates.
+41. man – used to read system reference manuals.
+42. apropos – searches manual page names and descriptions for a user-supplied keyword.
+43. rsync - remote file transfer and synchronization.
+44. tar - is an archive utility.
+45. gzip - use for compression and decompression of files.
+
+Top Linux Commands You Must Know:
+================================
+01. ls – The most frequently used command in Linux to list directories
+02. pwd – Print working directory command in Linux
+03. cd – Linux command to navigate through directories
+04. mkdir – Command used to create directories in Linux
+05. mv – Move or rename files in Linux
+06. cp – Similar usage as mv but for copying files in Linux
+07. rm – Delete files or directories
+07. touch – Create blank/empty files
+07. ln – Create symbolic links (shortcuts) to other files
+08. cat – Display file contents on the terminal
+09. clear – Clear the terminal display
+10. echo – Print any text that follows the command
+11. less – Linux command to display paged outputs in the terminal
+12. man – Access manual pages for all Linux commands
+13. uname – Linux command to get basic information about the OS
+14. whoami – Get the active username
+15. tar – Command to extract and compress files in Linux
+16. grep – Search for a string within an output
+17. head – Return the specified number of lines from the top
+18. tail – Return the specified number of lines from the bottom
+19. diff – Find the difference between two files
+20. cmp – Allows you to check if two files are identical
+21. comm – Combines the functionality of diff and cmp
+22. sort – Linux command to sort the content of a file while outputting
+23. export – Export environment variables in Linux
+24. zip – Zip files in Linux
+25. unzip – Unzip files in Linux
+25. ssh – Secure Shell command in Linux
+26. service – Linux command to start and stop services
+27. ps – Display active processes
+28. kill and killall – Kill active processes by process ID or name
+29. df – Display disk filesystem information
+30. mount – Mount file systems in Linux
+31. chmod – Command to change file permissions
+32. chown – Command for granting ownership of files or folders
+33. ifconfig – Display network interfaces and IP addresses
+34. traceroute – Trace all the network hops to reach the destination
+35. wget – Direct download files from the internet
+36. ufw – Firewall command
+37. iptables – Base firewall for all other firewall utilities to interface with
+38. apt, pacman, yum, rpm – Package managers depending on the distro
+39. sudo – Command to escalate privileges in Linux
+40. cal – View a command-line calendar
+41. alias – Create custom shortcuts for your regularly used commands
+42. dd – Majorly used for creating bootable USB sticks
+43. whereis – Locate the binary, source, and manual pages for a command
+44. whatis – Find what a command is used for
+45. top – View active processes live with their system usage
+46. useradd and usermod – Add new user or change existing users data
+47. passwd – Create or update passwords for existing users
+
+=================================================================================================================================================================
+1. find: Search for files and directories with advanced criteria.
+Example: find /path/to/dir -name "*.log" -mtime -7 (Find the files modified in last 7 days.)
+
+2. awk: Process and analyse text files.
+Example: awk '{print $1, $3}' filename.txt (Print the first and third columns from a text file.)
+
+3. sed: Streamline editing of files or input streams.
+Example: sed -i 's/old_text/new_text/g' filename.txt (Replace all occurrences of old_text with new_text in a file.)
+
+4. rsync: Efficiently sync files and directories between locations.
+Example: rsync -avz /source/dir /destination/dir (Synchronize directories with compression and verbose output.)
+
+5. xargs: Build and execute command lines from input.
+Example: find /path -name "*.tmp" | xargs rm (Find and delete temporary files.)
+
+6. systemctl: Control system services and the system state.
+Example: systemctl status nginx (Check the status of the Nginx service.)
+
+7. dig:It is used to get DNS server information.
+Example: dig www.eaxmples.com ( gives the DNS server info of google)
+
+8. lsblk: It is used to see the block device’s information with their logical partition.
+Example: lsbk (Display a list of all block devices on the system.)
+
+9. free:It Keeps track of memory and displays free and used memory.
+Example: free -h (Display memory in a more readable format (KB, MB, GB).)
+
+10. df & du :Both commands are used to see disk space. 
+ df: Used to see free and used space on the mounted system.
+ du: Used to see disk usage for all files and directories.
+Example: df -h (Display disk space usage in a human-readable format for all mounted file systems.)
+Example: du (Display the disk usage of the current directory and its subdirectories.)
+
+=================================================================================================================================================================
+Real-time troubleshooting in Linux:-
+
+1. How would you troubleshoot a system that's running out of disk space?
+Answer: Use the df command to see which partitions are full: df -h
+This will show disk usage in a human-readable format.
+Find large files: du -ah / | sort -rh | head -n 20
+This command lists the top 20 largest files and directories.
+
+2. How do you monitor CPU and memory usage in real time?
+Answer: top: Provides a real-time view of CPU and memory usage
+htop: A more user-friendly version of top (if installed)
+
+3. How would you recover a system where the /etc/fstab file has been misconfigured, preventing the system from booting?
+Answer: Boot into Rescue Mode or Single User Mode: Reboot the system and access the bootloader (GRUB).
+Edit the boot options by adding single or rescue at the end of the kernel boot line to enter single-user mode.
+You can specify init=/bin/bash in the GRUB boot parameters to get a basic shell with limited functionality.
+Fix the /etc/fstab file: nano /etc/fstab
+Remount the root filesystem: mount -o remount,rw /
+Reboot: After fixing the file, reboot the system: reboot
+
+4. How would you extend a logical volume and resize the filesystem?
+Answer: Ensure you have free space in the volume group: vgdisplay
+Extend the logical volume: lvextend -L +10G /dev/mapper/vg_name-lv_name
+Resize the filesystem: resize2fs /dev/mapper/vg_name-lv_name
+For xfs: xfs_growfs /mount/point
+
+5. A user reports that their cron jobs are not running. How would you troubleshoot this issue?
+Answer: Ensure the cron service is running: systemctl status cron
+Verify the cron job syntax: List the cron jobs for the user: crontab -l -u username
+Check cron logs: Cron jobs are logged in /var/log/syslog or /var/log/cron 
+
+6. How would you troubleshoot a slow-performing server?
+Answer: Check CPU usage: Use top or htop to check for high CPU usage: top
+Identify any processes consuming excessive CPU and investigate further.
+Check memory usage: free -m
+Check for high swap usage, which might indicate memory pressure.
+
+7. How would you reset a forgotten root password?
+Answer: Boot into single-user mode. Reboot the system. When GRUB appears, press e to edit the boot options.
+Find the line that starts with linux, append single or init=/bin/bash at the end, and boot.
+Remount the root filesystem: In single-user mode, the root filesystem might be mounted as read-only. Remount it in read-write mode:
+mount -o remount,rw / Change the root password: Use the passwd command to change the root password: passwd && reboot
+
+8. How do you set file permissions recursively on a directory?
+Answer: Change permissions on a directory and its contents: Use chmod with the -R option: chmod -R 755 /path/to/directory
+Change ownership recursively: Use chown to change the owner and group of the directory and its contents: chown -R user:group /path/to/directory
+
+9. How would you secure SSH access on a Linux server?
+Answer: Edit the /etc/ssh/sshd_config file and disable root login: PermitRootLogin no
+Change the default port (22) to something less common to reduce automated attacks: Port 2222
+Disable password-based login by enforcing key-based authentication: PasswordAuthentication no
+
+10. How do you recover a deleted file from a running process in Linux?
+Answer: Use lsof to find the deleted file: lsof | grep deleted
+Each running process has its file descriptors listed in /proc. You can copy the file from there:
+cp /proc/1234/fd/4 /path/to/recover/file
+This restores the deleted file while the process is still running.
+
+11. How would you set up automatic backups using rsync and cron?
+Answer: Write a simple backup script that uses rsync to synchronize directories:
+#!/bin/bash
+rsync -avz /source/directory /backup/directory
+Save the script as backup.sh and make it executable: chmod +x backup.sh
+Set up a cron job: Use crontab -e to open the cron configuration and add the following line to run the backup script every day at 2 AM:
+0 2 * * * /path/to/backup.sh
+Verify the cron job: Check the cron logs to ensure the backup is running as expected: grep CRON /var/log/syslog
+
+12. How would you configure a Linux server to send out system alerts via email?
+Answer: Install mailx or sendmail depending on your Linux distribution: sudo apt-get install mailutils 
+Set up your SMTP server details in /etc/mail.rc or /etc/ssmtp/ssmtp.conf to send emails.
+Write a script that checks the server’s status and sends an email if a problem is detected:
+#!/bin/bash
+load=$(uptime | awk '{print $10}')
+if (( $(echo "$load > 2.0" | bc -l) )); then
+ echo "High CPU load detected: $load" | mail -s "Alert: High CPU Load" admin@example.com
+fi
+Schedule the alert: Use crontab -e to schedule the alert script to run every 5 minutes:
+*/5 * * * * /path/to/alert.sh
+
+13. How do you troubleshoot a Linux system that's running out of memory?
+Answer: Check current memory usage: free -m
+Identify memory-hogging processes: Use top or htop to find processes consuming large amounts of memory: top
+Sort processes by memory usage: ps aux --sort=-%mem | head
+Check for memory leaks: smem -r | head && pmap <pid>
+
+14. How do you find and kill zombie processes in Linux?
+Answer: You can use the ps command to find zombie processes: ps aux | grep Z
+Zombies will have a Z in the status column.
+Zombie processes are waiting for their parent process to reap them. To eliminate them, you can either wait for the parent process to handle them or kill the parent: kill -HUP <parent_pid>
+
+15. How would you increase the maximum number of open file descriptors in Linux?
+Answer: Use ulimit -n to check the current limit for the number of open file descriptors: ulimit -n
+You can temporarily increase the limit in the current session: ulimit -n 4096
+Log out and log back in or restart the system for the changes to take effect.
+
+=================================================================================================================================================================
+Some Important Linux Commands: 
+ 
+SYSTEM INFORMATION 
+uname -a # Display Linux system information 
+uname -r # Display kernel release information 
+lsb_release -a # Show which version of ubuntu installed 
+uptime # Show how long the system has been running the load 
+hostname # Show system host name 
+hostname -I # Display the IP addresses of the host 
+last|grepreboot # Show system reboot history 
+date # Show the current date and time 
+cal # Show this month's calendar 
+w # Display who is online 
+whoami # Who you are logged in as 
+ 
+Networking commands
+Ifconfig # To display the system ip address. 
+Netstat -anlp | grep httpd # To see the apache is running or not. 
+Ping <hostname> # To display to see the connection remote to available or not. 
+dig <hostname> # To display the repose time and remote server. 
+nslookup <hostname> # To display the hostname is dns registered or not. 
+Telnet <hostname portnum> # To see the remote server and port is available 
+Nmap <hostname> # It is used for port number scanners. 
+Traceroute <hostname> -# To reach the website path in 30 hops in display. 
+ 
+PERFORMANCE MONITORING ANDSTATISTICS 
+top # Display and manage the top processes 
+mpstat 1 # Display processor related statistics 
+vmstat 1 # Display virtual memory statistics 
+iostat 1 # Display I/O statistics 
+tcpdump -i eth0 # Capture and display all packets on interface eth0 tcpdump -i eth0 'port 80' # Monitor all traffic on port 80 ( HTTP ) 
+lsof # List all open files on the system 
+lsof -u user # List files opened by user 
+free -h # Display free and used memory 
+watch df -h # Execute "df -h", showing periodic updates 
+ 
+USER INFORMATION ANDMANAGEMENT 
+id # Display the user and group ids of your current user. 
+last # Display the last users who have logged onto the system. 
+who # Show who is logged into the system. 
+groupadd test # Create a group named "test". 
+useradd -c "John Smith" -m john # Create an account named john, with a 
+comment of "John Smith" and create the user's home directory. 
+userdel john # Delete the john account. 
+usermod -aG sales john # Add the john account to the sales group 
+ 
+FILE AND DIRECTORY COMMANDS 
+ls -al # List all files in a long listing (detailed) format 
+pwd # Display the present working directory 
+mkdir directory # Create a directory 
+rm file # Remove (delete) file 
+rm -r directory # Remove the directory and its contents recursively 
+rm -f file # Force removal of file without prompting for confirmation 
+rm -rf directory # Forcefully remove directory recursively 
+rmdir # Delete a file or files 
+cp file1 file2 # Copy file1 to file2 
+cp -r source_directory destination # Copy source_directory recursively to destination. 
+If destination exists, copy source_directory into destination, otherwise create destination with the contents of source_directory. 
+mv file1 file2 # Rename or move file1 to file2. If file2 is an existing directory, move file1 into directory file2
+
+𝟏. 𝐈𝐟 𝐲𝐨𝐮 𝐰𝐚𝐧𝐭 𝐭𝐨 𝐫𝐮𝐧 𝐚 𝐭𝐚𝐬𝐤/𝐬𝐜𝐫𝐢𝐩𝐭 𝐢𝐧 𝐛𝐚𝐜𝐤𝐠𝐫𝐨𝐮𝐧𝐝 𝐞𝐯𝐞𝐧 𝐢𝐟 𝐲𝐨𝐮 𝐜𝐥𝐨𝐬𝐞 𝐲𝐨𝐮𝐫 𝐭𝐞𝐫𝐦𝐢𝐧𝐚𝐥, 𝐰𝐡𝐚𝐭 𝐢𝐬 𝐭𝐡𝐞 𝐰𝐚𝐲?
+Ans: Using nohup command
+
+𝟐. 𝐖𝐡𝐢𝐜𝐡 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 𝐝𝐢𝐬𝐩𝐥𝐚𝐲𝐬 𝐢𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐚𝐛𝐨𝐮𝐭 𝐤𝐞𝐫𝐧𝐞𝐥-𝐫𝐞𝐥𝐚𝐭𝐞𝐝 𝐦𝐞𝐬𝐬𝐚𝐠𝐞𝐬 𝐚𝐥𝐨𝐧𝐠 𝐰𝐢𝐭𝐡 𝐡𝐚𝐫𝐝𝐰𝐚𝐫𝐞 𝐚𝐧𝐝 𝐬𝐲𝐬𝐭𝐞𝐦 𝐬𝐭𝐚𝐫𝐭𝐮𝐩 𝐦𝐞𝐬𝐬𝐚𝐠𝐞𝐬 𝐬𝐭𝐨𝐫𝐞𝐝 𝐢𝐧 𝐤𝐞𝐫𝐧𝐞𝐥 𝐫𝐢𝐧𝐠 𝐛𝐮𝐟𝐟𝐞𝐫?
+Ans: dmesg command
+
+𝟑. 𝐖𝐡𝐢𝐜𝐡 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 𝐜𝐚𝐧 𝐲𝐨𝐮 𝐮𝐬𝐞 𝐭𝐨 𝐝𝐢𝐬𝐩𝐥𝐚𝐲 𝐚 𝐥𝐢𝐬𝐭 𝐨𝐟 𝐜𝐮𝐫𝐫𝐞𝐧𝐭𝐥𝐲 𝐜𝐨𝐧𝐟𝐢𝐠𝐮𝐫𝐞𝐝 𝐏𝐡𝐲𝐬𝐢𝐜𝐚𝐥 𝐕𝐨𝐥𝐮𝐦𝐞𝐬?
+Ans: lvs command
+
+𝟒. 𝐖𝐡𝐢𝐜𝐡 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 𝐝𝐢𝐬𝐩𝐥𝐚𝐲𝐬 𝐦𝐞𝐦𝐨𝐫𝐲 𝐮𝐬𝐚𝐠𝐞, 𝐢𝐧𝐜𝐥𝐮𝐝𝐢𝐧𝐠 𝐭𝐡𝐞 𝐚𝐦𝐨𝐮𝐧𝐭
+𝐨𝐟 𝐬𝐰𝐚𝐩 𝐬𝐩𝐚𝐜𝐞 𝐛𝐞𝐢𝐧𝐠 𝐮𝐬𝐞𝐝?
+Ans: free command
+
+𝟓. 𝐓𝐡𝐞 /𝐡𝐨𝐦𝐞 𝐩𝐚𝐫𝐭𝐢𝐭𝐢𝐨𝐧 𝐢𝐬 𝐫𝐮𝐧𝐧𝐢𝐧𝐠 𝐨𝐮𝐭 𝐨𝐟 𝐝𝐢𝐬𝐤 𝐬𝐩𝐚𝐜𝐞. 𝐖𝐡𝐢𝐜𝐡 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 𝐜𝐚𝐧 𝐲𝐨𝐮 𝐮𝐬𝐞 𝐭𝐨 𝐝𝐞𝐭𝐞𝐫𝐦𝐢𝐧𝐞 𝐰𝐡𝐢𝐜𝐡 𝐮𝐬𝐞𝐫'𝐬 𝐡𝐨𝐦𝐞 𝐝𝐢𝐫𝐞𝐜𝐭𝐨𝐫𝐲 𝐢𝐬 𝐮𝐬𝐢𝐧𝐠 𝐭𝐡𝐞 𝐦𝐨𝐬𝐭 𝐬𝐩𝐚𝐜𝐞?
+Ans: we can use du command
+
+𝟔. 𝐇𝐨𝐰 𝐭𝐨 𝐜𝐡𝐞𝐜𝐤 𝐲𝐨𝐮𝐫 𝐋𝐢𝐧𝐮𝐱 𝐅𝐢𝐥𝐞𝐒𝐲𝐬𝐭𝐞𝐦?
+Ans: lsblk -f
+
+𝟕. 𝐇𝐨𝐰 𝐭𝐨 𝐒𝐎𝐑𝐓 𝐭𝐡𝐞 𝐜𝐨𝐧𝐭𝐞𝐧𝐭 𝐟𝐫𝐨𝐦 𝐚 𝐟𝐢𝐥𝐞 𝐢𝐧 𝐋𝐢𝐧𝐮𝐱?
+Ans: sort -r file
+
+𝟖. 𝐇𝐨𝐰 𝐭𝐨 𝐝𝐢𝐬𝐩𝐥𝐚𝐲 𝐔𝐍𝐈𝐐𝐔𝐄 𝐜𝐨𝐧𝐭𝐞𝐧𝐭 𝐟𝐫𝐨𝐦 𝐚 𝐟𝐢𝐥𝐞 𝐢𝐧 𝐋𝐢𝐧𝐮𝐱?
+Ans: sort file | uniq
+
+𝟗. 𝐇𝐨𝐰 𝐭𝐨 𝐬𝐞𝐚𝐫𝐜𝐡 𝐦𝐮𝐥𝐭𝐢𝐩𝐥𝐞 𝐰𝐨𝐫𝐝𝐬 𝐚𝐧𝐝 𝐝𝐢𝐬𝐩𝐥𝐚𝐲 𝐦𝐚𝐭𝐜𝐡𝐢𝐧𝐠 𝐜𝐨𝐧𝐭𝐞𝐧𝐭 𝐟𝐫𝐨𝐦 𝐚 𝐟𝐢𝐥𝐞 𝐢𝐧 𝐋𝐢𝐧𝐮𝐱?
+Ans: egrep "word1|word2" file
+
+𝟏𝟎. 𝐇𝐨𝐰 𝐭𝐨 𝐂𝐎𝐔𝐍𝐓 𝐧𝐨. 𝐨𝐟 𝐥𝐢𝐧𝐞𝐬 𝐢𝐧 𝐚 𝐟𝐢𝐥𝐞 𝐢𝐧 𝐋𝐢𝐧𝐮𝐱?
+Ans: wc -l file
+
+𝟏𝟏. 𝐇𝐨𝐰 𝐭𝐨 𝐜𝐡𝐞𝐜𝐤 𝐢𝐟 𝐭𝐰𝐨 𝐟𝐢𝐥𝐞𝐬 𝐚𝐫𝐞 𝐢𝐝𝐞𝐧𝐭𝐢𝐜𝐚𝐥 𝐨𝐫 𝐧𝐨𝐭 𝐢𝐧 𝐋𝐢𝐧𝐮𝐱?
+Ans: cmp fileA fileB
+
+𝟏𝟐. 𝐇𝐨𝐰 𝐭𝐨 𝐜𝐨𝐦𝐩𝐚𝐫𝐞 𝐚𝐧𝐝 𝐝𝐢𝐬𝐩𝐥𝐚𝐲 𝐝𝐢𝐟𝐟𝐞𝐫𝐞𝐧𝐜𝐞 𝐛𝐞𝐭𝐰𝐞𝐞𝐧 𝐟𝐢𝐥𝐞𝐬 𝐢𝐧 𝐋𝐢𝐧𝐮𝐱?
+Ans: diff -u fileA fileB
+
+𝟏𝟑. 𝐇𝐨𝐰 𝐭𝐨 𝐫𝐞𝐜𝐨𝐫𝐝 𝐲𝐨𝐮𝐫 𝐚𝐜𝐭𝐢𝐯𝐢𝐭𝐲 𝐨𝐧 𝐭𝐞𝐫𝐦𝐢𝐧𝐚𝐥 𝐢𝐧 𝐚 𝐟𝐢𝐥𝐞?
+Ans: script
+
+𝟏𝟒. 𝐇𝐨𝐰 𝐭𝐨 𝐝𝐢𝐬𝐩𝐥𝐚𝐲 𝐬𝐭𝐚𝐫𝐭𝐢𝐧𝐠 𝐭𝐰𝐨 𝐜𝐡𝐚𝐫𝐚𝐜𝐭𝐞𝐫𝐬 𝐨𝐟 𝐚𝐥𝐥 𝐥𝐢𝐧𝐞?
+Ans: cut -c1-2 file.txt
+
+𝟏𝟓. 𝐇𝐨𝐰 𝐭𝐨 𝐝𝐢𝐬𝐩𝐥𝐚𝐲 𝐚 𝐬𝐩𝐞𝐜𝐢𝐟𝐢𝐜 𝐥𝐢𝐧𝐞 𝐟𝐫𝐨𝐦 𝐚 𝐟𝐢𝐥𝐞?
+Ans: sed -n '5p' file.txt
+
+𝟏𝟔. 𝐇𝐨𝐰 𝐭𝐨 𝐫𝐞𝐩𝐥𝐚𝐜𝐞 𝐚 𝐬𝐩𝐞𝐜𝐢𝐟𝐢𝐜 𝐰𝐨𝐫𝐝 𝐰𝐢𝐭𝐡𝐢𝐧 𝐚 𝐟𝐢𝐥𝐞?
+Ans: sed -n 's/from/to/g' file.txt
+
+𝟏𝟕. 𝐇𝐨𝐰 𝐭𝐨 𝐞𝐱𝐭𝐞𝐧𝐝 𝐬𝐢𝐳𝐞 𝐨𝐟 𝐚 𝐟𝐢𝐥𝐞 𝐰𝐢𝐭𝐡𝐨𝐮𝐭 𝐚𝐝𝐝𝐢𝐧𝐠 𝐚𝐧𝐲 𝐝𝐚𝐭𝐚?
+Ans: truncate -s 100M file.txt
+
+𝟏𝟖. 𝐇𝐨𝐰 𝐭𝐨 𝐜𝐡𝐞𝐜𝐤 𝐜𝐩𝐮/𝐜𝐨𝐫𝐞/𝐭𝐡𝐫𝐞𝐚𝐝 𝐢𝐧𝐟𝐨 𝐨𝐟 𝐲𝐨𝐮𝐫 𝐥𝐢𝐧𝐮𝐱 𝐬𝐞𝐫𝐯𝐞𝐫?
+Ans: lscpu
+
+=================================================================================================================================================================
+
