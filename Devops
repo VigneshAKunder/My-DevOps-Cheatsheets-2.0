@@ -1,0 +1,1306 @@
+DevOps → edx.org/learn/devops
+
+Steps to become DevOps engineer: 
+
+🐧 Learn Linux
+💻 Learn programming
+🔗 Learn networking basics
+🛠️ Understand Infrastructure as Code
+🔍 Learn Infrastructure Monitoring
+🐳 Study Docker and Kubernetes
+🔧 Learn CI/CD tools
+☁️ Study cloud providers
+
+=================================================================================================================================================================
+Roadmap for DevOps: 
+------------------
+𝗕𝗮𝘀𝗶𝗰𝘀
+ - Git: It's essential for DevOps engineers to be able to use Git effectively.
+ - Linux: It's important to have a strong understanding of Linux commands and how to navigate the Linux file system.
+ - Networking: A basic understanding of networking is important for DevOps engineers. 
+ - Databases: DevOps engineers often need to work with databases. It's helpful to have a basic understanding of how databases work and how to query them.
+
+𝗣𝗿𝗼𝗴𝗿𝗮𝗺𝗺𝗶𝗻𝗴
+ - Python: Python is a popular programming language that is widely used in DevOps. It's a good language to learn if you're new to programming.
+
+𝗖𝗹𝗼𝘂𝗱 + 𝗜𝗔𝗖 + 𝗦𝗖𝗠
+ - AWS: Amazon Web Services is the most popular cloud platform. It's a good idea to learn the basics of AWS, even if you don't plan on specializing in it.
+ - Azure: Microsoft Azure is another popular cloud platform.
+ - Google Cloud: Google Cloud Platform is a third major cloud provider.
+ - IAC (Infrastructure as Code): Infrastructure as code is a practice of managing infrastructure in a programmatic way. Terraform is a popular tool for IAC.
+ - Terraform: It is a powerful tool for managing your infrastructure through code.
+
+𝗖𝗼𝗻𝘁𝗮𝗶𝗻𝗲𝗿𝗶𝘇𝗮𝘁𝗶𝗼𝗻
+ - Docker: Docker is a tool that allows you to package applications into containers. Containers are a popular way to deploy and run applications in a DevOps environment.
+ - Kubernetes: Kubernetes is a container orchestration platform that allows you to manage and scale containerized applications.
+ - HELM: Helm is a tool that helps you manage Kubernetes charts.
+
+𝗖𝗜/𝗖𝗗
+ - Jenkins: Jenkins is a popular open-source CI/CD tool.
+ - GitHub Actions: GitHub Actions is a built-in CI/CD tool for GitHub.
+ - GitLab CI/CD: GitLab CI/CD is a built-in CI/CD tool for GitLab.
+ - CircleCI: CircleCI is a popular continuous integration and continuous delivery (CI/CD) platform.
+ 
+𝗠𝗼𝗻𝗶𝘁𝗼𝗿𝗶𝗻𝗴 & 𝗟𝗼𝗴𝗴𝗶𝗻𝗴
+ - Prometheus: Prometheus is a popular monitoring tool that can be used to collect and analyze metrics from your applications and infrastructure.
+ - Grafana: Grafana is a popular visualization tool that can be used to create dashboards for your Prometheus metrics.
+
+==================================================================================================================================================================
+DevOps engineer toolkit: 
+-----------------------
+Operating system → Linux (recommended), Windows
+Programming → Go, Python, Groovy, Bash
+Container orchestration → Kubernetes, Docker Swarm
+Containers → Docker, Podman, Containerd
+Source Code Management → Git, Subversion
+Cloud → AWS, GCP, Azure, CivoCloud
+CI/CD → Jenkins, CircleCI, Bamboo
+Source control and collaborative coding → GitHub, BitBucket, GitLab
+IaC (Infrastructure as Code) and IP (Infrastructure Provisioning) → Ansible, Puppet, Chef, Terraform, Pulumi, Stack, Crossplane
+Continuous Feedback → GetFeedback, Jira, Slack, Pendo
+Observability (monitoring, logging, and analyzing system behavior) → Nagios, Grafana , Prometheus, New Relic, ELK Stack Datadog
+Plan → Jira Software, Confluence, Slack
+Automated testing → xray, snyk, JUnit, Selenium, Appium
+https://youtu.be/UMQGyeAnfFE
+
+==================================================================================================================================================================
+Top Common Practice Set Questions for interviews: 
+1) Have you worked on Linux?
+2) what are the linux flavors?
+3) what is process management?
+4) How to create a User? and How to give permissions to the user.
+5) How do add a user to an Existing Group In Linux?
+6) How to Change the owner permissions of the User or the file?
+7) How to check the disk space in Linux?
+8) How to check memory in Linux?
+9) what does the top command Display?
+10) what is the use of lsblk command in Linux?
+11) How to do Disk partition in Ubuntu?
+12) where is fstab in Linux?
+13) what is the linux boot process?
+14) what is a linux filesystem? and what is /etc and /bin?
+15) what are Crontab and Cronjob?
+16) what is virtualization?
+17) what is SElinux?
+18) How DNS works?
+19) what is Apache?
+20) What is PHPAdmin?
+21) Do you know about firewalls?
+22) what is an SSL certificate? How we can create the SSL certificate and where we will do the configurations in apache for the SSL certificate?
+23) which is better apache or Nginx? for the higher load which webserver is best?
+24) what is the path of apache configuration files?
+25) what is Cloud Computing?
+26) what is AWS?
+27) what is EC2?
+28) How we can configure the EC2 instance?
+29) What is AMI?
+30) How we can choose which instance type is required?
+31) From where can we enable termination protection in EC2?
+32) Suppose we have to install Ubuntu then where do we have to define OS while launching the EC2 instance?
+33) what is .pem?
+34) if we stop the ec2 instance then is the Private IP will change? or Not?
+35) Can you explain about inbound rules of the default security group?
+36) what is the Use of public and private IP?
+37) what is a Security Group?
+38) security Group is stateful How?
+39) what is VPC?
+40) what is CIDR?
+41) what is Subnetting?
+42) what is an internet gateway?
+43) what is Nat and why do we use nat gateway?
+44) what is Elastic IP?
+45) Tell me about VPC peering.
+46) what is S3?
+47) what is Cloudtrail?
+48) what is Cloudfront?
+49) what is blue/green deployment?
+50) what is Cloudformation and terraform?
+51) what is Elastic beanstalk?
+52) what is RDS? Is there a need to worry about backups?
+53) what is Autoscaling and How many types of autoscaling policies?
+54) what is Loadbalancer?
+55) What is the difference between ALB and ELB?
+56) what is PAAS?
+57) Suppose you are working in a new company and you don’t know how to work on new projects for the new company then which approach you will follow?
+58) what is ACM?
+59) what is shell scripting? How do we use the script for Automation?
+60) what is MySQL? How many ways we can use to take backup?
+
+==================================================================================================================================================================
+Some Common Errors in DevOps:
+
+1. HTTP Error Codes
+400 Bad Request: The server cannot process the request due to a client error (e.g., malformed request syntax).
+401 Unauthorized: Authentication is required and has failed or has not been provided.
+403 Forbidden: The server understands the request but refuses to authorize it.
+404 Not Found: The requested resource could not be found.
+500 Internal Server Error: A generic error occurred on the server.
+502 Bad Gateway: The server received an invalid response from an upstream server.
+503 Service Unavailable: The server is currently unable to handle the request due to temporary overload or maintenance.
+2. Git Error Codes
+error: src refspec branch_name does not match any: The specified branch does not exist.
+fatal: Authentication failed: Credentials are incorrect or missing.
+fatal: unable to connect to remote repository: Network issues or incorrect repository URL.
+error: Your local changes to the following files would be overwritten by merge: Local changes are preventing a merge.
+3. Jenkins Error Codes
+ERROR: Unable to resolve class: Jenkins cannot find a class in the pipeline script or plugin.
+java.lang.OutOfMemoryError: Jenkins has run out of memory.
+java.lang.NullPointerException: A null object reference was used in the pipeline or job.
+Failed to connect to repository: Issues with SCM integration or credentials.
+4. Docker Error Codes
+Error response from daemon: pull access denied: The image does not exist or you lack permission to access it.
+docker: Error response from daemon: driver failed programming external connectivity: Networking issues with container ports.
+Error: No such container: The specified container does not exist.
+5. Kubernetes Error Codes
+CrashLoopBackOff: A container is repeatedly crashing.
+ImagePullBackOff: Kubernetes cannot pull the container image from the registry.
+Pending: A pod cannot be scheduled due to insufficient resources or other issues.
+ErrImagePull: The image specified in the pod specification cannot be pulled from the registry.
+6. Maven Error Codes
+[ERROR] Failed to execute goal: Issues with Maven goals (e.g., compile, test, package).
+[ERROR] Could not find artifact: Dependencies are missing or cannot be resolved.
+[ERROR] Invalid version range: Version specified is not valid or not available.
+7. Ansible Error Codes
+fatal: [hostname]: UNREACHABLE!: Ansible cannot connect to the target host.
+failed: Task failed due to an issue in the playbook or role.
+could not find a suitable distribution: Issues with package management on the target host.
+
+==================================================================================================================================================================
+1. What are your daily responsibilities as a DevOps engineer?
+2. Which DevOps tools are you proficient with?
+3. Can you describe the CI/CD workflow in your project?
+4. How do you handle the continuous delivery (CD) aspect in your projects?
+5. What methods do you use to check for code vulnerabilities?
+6. What AWS services are you proficient in?
+7. How would you access data in an S3 bucket from Account A when your application is running on an EC2 instance in Account B?
+8. How do you provide access to an S3 bucket, and what permissions need to be set on the bucket side?
+9. How can Instance 2, with a static IP, communicate with Instance 1, which is in a private subnet and mapped to a multi-AZ load balancer?
+10. For an EC2 instance in a private subnet, how can it verify and download required packages from the internet without using a NAT gateway or bastion host? Are there any other AWS services that can facilitate this?
+11. What is the typical latency for a load balancer, and if you encounter high latency, what monitoring steps would you take?
+12. If your application is hosted in S3 and users are in different geographic locations, how can you reduce latency?
+13. Which services can be integrated with a CDN (Content Delivery Network)?
+14. How do you dynamically retrieve VPC details from AWS to create an EC2 instance using IaC?
+15. How do you manage unmanaged AWS resources in Terraform?
+16. How do you pass arguments to a VPC while using the `terraform import` command?
+17. What are the prerequisites before importing a VPC in Terraform?
+18. If an S3 bucket was created through Terraform but someone manually added a policy to it, how do you handle this situation using IaC?
+19. How do you handle credentials for a PHP application accessing MySQL or any other secrets in Docker?
+20. What is the command for running container logs?
+21. Have you upgraded any Kubernetes clusters?
+22. How do you deploy an application in a Kubernetes cluster?
+23. How do you communicate with a Jenkins server and a Kubernetes cluster?
+24. How do you generate Kubernetes cluster credentials?
+25. Do you only update Docker images in Kubernetes, or do you also update replicas, storage levels, and CPU allocation?
+26. What types of pipelines are there in Jenkins?
+27. Can you define environment variables inside your Jenkins pipeline?
+28. What is the role of artifacts in Jenkins, and why do we need to push them to Nexus instead of building and storing them locally?
+29. If you’re developing a Python-based application, how do you separate the packages needed for your local deployment to avoid interfering with globally installed packages?
+30. How do you handle error handling in Python?
+
+==================================================================================================================================================================
+1. Tell me about your professional experience and day to day activities.
+2. What is the difference between IAM user and Roles.
+3. What is main difference between root user and IAM user.
+4. Do you know what is EC2. Explain why ec2 is used.?
+5. What is difference between on demand instance and spot instance?
+6. Why we use Autoscaling in AWS. What are types of autoscaling group explain them?
+7. Imagine you have an EC2 instance with auto-scaling enabled, set to scale out whenever the instance reaches peak load. However, you notice that auto-scaling is not functioning as expected. What could be the potential reasons for this issue, and how would you troubleshoot it?
+8. Suppose you are using an EC2 instance that frequently shuts down unexpectedly. How would you automate the process so that the EC2 instance automatically restarts whenever it shuts down?
+9. What is Amazon S3, and what are its primary use cases?
+10. Can you explain the different types of storage classes available in Amazon S3? How to secure the object in S3 bucket.
+11. What is state.tf in terraform.
+12. What is count function in terraform?
+13. What are python decorators?
+14. What are lambda in python?
+15. How to achieve this " str = "hello"
+expected output# "olleh"
+
+==================================================================================================================================================================
+-How do you handle credentials for a PHP application accessing MySQL or any other secrets in Docker?
+-What is the command for running container logs?
+-Have you upgraded any Kubernetes clusters?
+-How do you deploy an application in a Kubernetes cluster?
+-How do you communicate with a Jenkins server and a Kubernetes cluster?
+-Which DevOps tools are you proficient with?
+-Can you describe the CI/CD workflow in your project?
+-How do you handle the continuous delivery (CD) aspect in your projects?
+-What methods do you use to check for code vulnerabilities?
+-What AWS services are you proficient in?
+-How would you access data in an S3 bucket from Account A when your application is running on an EC2 instance in Account B?
+-How do you provide access to an S3 bucket, and what permissions need to be set on the bucket side?
+-How can Instance 2, with a static IP, communicate with Instance 1, which is in a private subnet and mapped to a multi-AZ load balancer?
+-How do you pass arguments to a VPC while using the `terraform import` command?
+-What are the prerequisites before importing a VPC in Terraform?
+-If an S3 bucket was created through Terraform but someone manually added a policy to it, how do you handle this situation using IaC?
+-For an EC2 instance in a private subnet, how can it verify and download required packages from the internet without using a NAT gateway or bastion host? Are there any other AWS services that can facilitate this?
+-What is the typical latency for a load balancer, and if you encounter high latency, what monitoring steps would you take?
+-If your application is hosted in S3 and users are in different geographic locations, how can you reduce latency?
+-Which services can be integrated with a CDN (Content Delivery Network)?
+-How do you dynamically retrieve VPC details from AWS to create an EC2 instance using IaC?
+-How do you manage unmanaged AWS resources in Terraform?
+-Write BASH Script for Prime numbers.
+
+1. What are your daily responsibilities as a DevOps engineer?
+2. Which DevOps tools are you proficient with?
+3. Can you describe the CI/CD workflow in your project?
+4. How do you handle the continuous delivery (CD) aspect in your projects?
+5. What methods do you use to check for code vulnerabilities?
+6. What AWS services are you proficient in?
+7. How would you access data in an S3 bucket from Account A when your application is running on an EC2 instance in Account B?
+8. How do you provide access to an S3 bucket, and what permissions need to be set on the bucket side?
+9. How can Instance 2, with a static IP, communicate with Instance 1, which is in a private subnet and mapped to a multi-AZ load balancer?
+10. For an EC2 instance in a private subnet, how can it verify and download required packages from the internet without using a NAT gateway or bastion host? Are there any other AWS services that can facilitate this?
+11. What is the typical latency for a load balancer, and if you encounter high latency, what monitoring steps would you take?
+12. If your application is hosted in S3 and users are in different geographic locations, how can you reduce latency?
+13. Which services can be integrated with a CDN (Content Delivery Network)?
+14. How do you dynamically retrieve VPC details from AWS to create an EC2 instance using IaC?
+15. How do you manage unmanaged AWS resources in Terraform?
+16. How do you pass arguments to a VPC while using the `terraform import` command?
+17. What are the prerequisites before importing a VPC in Terraform?
+18. If an S3 bucket was created through Terraform but someone manually added a policy to it, how do you handle this situation using IaC?
+19. How do you handle credentials for a PHP application accessing MySQL or any other secrets in Docker?
+20. What is the command for running container logs?
+21. Have you upgraded any Kubernetes clusters?
+22. How do you deploy an application in a Kubernetes cluster?
+23. How do you communicate with a Jenkins server and a Kubernetes cluster?
+24. How do you generate Kubernetes cluster credentials?
+25. Do you only update Docker images in Kubernetes, or do you also update replicas, storage levels, and CPU allocation?
+26. What types of pipelines are there in Jenkins?
+27. Can you define environment variables inside your Jenkins pipeline?
+28. What is the role of artifacts in Jenkins, and why do we need to push them to Nexus instead of building and storing them locally?
+29. If you’re developing a Python-based application, how do you separate the packages needed for your local deployment to avoid interfering with globally installed packages?
+
+==================================================================================================================================================================
+1)How do you handle rollbacks during a failed deployment?
+2)Explain the difference between continuous integration, continuous delivery, and continuous deployment.
+3)What strategies do you use to ensure high availability and reliability in a cloud environment?
+4)How do you monitor and troubleshoot performance issues in a CI/CD pipeline?
+5)Can you walk me through the process of setting up a Kubernetes cluster from scratch?
+6)What are the key differences between Docker and traditional virtual machines?
+7)How do you manage configuration and secrets in a multi-environment setup?
+8)Describe a challenging DevOps problem you’ve faced and how you resolved it.
+9)How do you ensure security in your CI/CD pipeline?
+10)What tools and practices do you use for infrastructure as code and why?
+
+==================================================================================================================================================================
+10 Essential Components of a Production Web Application:
+
+1 - It all starts with CI/CD pipelines that deploy code to the server instances. Tools like Jenkins and GitHub help over here.
+2 - The user requests originate from the web browser. After DNS resolution, the requests reach the app servers.
+3 - Load balancers and reverse proxies (such as Nginx & HAProxy) distribute user requests evenly across the web application servers.
+4 - The requests can also be served by a Content Delivery Network (CDN).
+5 - The web app communicates with backend services via APIs.
+6 - The backend services interact with database servers or distributed caches to provide the data.
+7 - Resource-intensive and long-running tasks are sent to job workers using a job queue.
+8 - The full-text search service supports the search functionality. Tools like Elasticsearch and Apache Solr can help here.
+9 - Monitoring tools (such as Sentry, Grafana, and Prometheus) store logs and help analyze data to ensure everything works fine. 
+10 - In case of issues, alerting services notify developers through platforms like Slack for quick resolution. 
+
+==================================================================================================================================================================
+Question 12: How do you check the system logs for troubleshooting purposes?
+
+Answer: 
+Use journalctl for systemd logs: Use less, cat, or tail for traditional log files in /var/log:
+
+journalctl -xe # View logs with extra details
+journalctl -u service_name # View logs for a specific service 
+sudo less /var/log/syslog sudo tail -f /var/log/messages
+
+==================================================================================================================================================================
+DevOps Interview Key Questions:
+
+1)What is DevOps, and why is it important?
+
+2)Explain the difference between Continuous Integration (CI) and 
+Continuous Delivery (CD).
+
+3)What is Infrastructure as Code (IaC), and what are its benefits?
+
+4)What is a Docker container, and how does it differ from a virtual machine 
+(VM)?
+
+5)Explain the concept of a CI/CD pipeline.
+
+6)What is Kubernetes, and what problems does it solve?
+
+7)What is a reverse proxy, and how is it used in DevOps?
+
+8)What is monitoring in DevOps, and why is it important?
+
+9)What is a rolling update in Kubernetes?
+
+10)How do you secure a CI/CD pipeline?
+
+==================================================================================================================================================================
+* What are the security practices in AWS?
+* What are wild cards in IAM?
+* How do you establish connection between multiple VPCs and explain the process?
+* Explain AWS WAF?
+* How did you reduce the deployment time in your organization using Terraform?
+* Write a Terraform script to scale up EC2 instances automatically?
+* Can you explain Federation user in Terraform?
+* What is Kubernetes and how it is different from Docker?
+* Explain the architecture of Kubernetes?
+* What is Daemon set in Kubernetes?
+
+==================================================================================================================================================================
+1. What are your daily responsibilities as a DevOps engineer?
+2. Which DevOps tools are you proficient with?
+3. Can you describe the CI/CD workflow in your project?
+4. How do you handle the continuous delivery (CD) aspect in your projects?
+5. What methods do you use to check for code vulnerabilities?
+6. What AWS services are you proficient in?
+7. How would you access data in an S3 bucket from Account A when your application is running on an EC2 instance in Account B?
+8. How do you provide access to an S3 bucket, and what permissions need to be set on the bucket side?
+9. How can Instance 2, with a static IP, communicate with Instance 1, which is in a private subnet and mapped to a multi-AZ load balancer?
+10. For an EC2 instance in a private subnet, how can it verify and download required packages from the internet without using a NAT gateway or bastion host? Are there any other AWS services that can facilitate this?
+11. What is the typical latency for a load balancer, and if you encounter high latency, what monitoring steps would you take?
+12. If your application is hosted in S3 and users are in different geographic locations, how can you reduce latency?
+13. Which services can be integrated with a CDN (Content Delivery Network)?
+14. How do you dynamically retrieve VPC details from AWS to create an EC2 instance using IaC?
+15. How do you manage unmanaged AWS resources in Terraform?
+16. How do you pass arguments to a VPC while using the `terraform import` command?
+17. What are the prerequisites before importing a VPC in Terraform?
+18. If an S3 bucket was created through Terraform but someone manually added a policy to it, how do you handle this situation using IaC?
+19. How do you handle credentials for a PHP application accessing MySQL or any other secrets in Docker?
+20. What is the command for running container logs?
+21. Have you upgraded any Kubernetes clusters?
+22. How do you deploy an application in a Kubernetes cluster?
+23. How do you communicate with a Jenkins server and a Kubernetes cluster?
+24. How do you generate Kubernetes cluster credentials?
+25. Do you only update Docker images in Kubernetes, or do you also update replicas, storage levels, and CPU allocation?
+26. What types of pipelines are there in Jenkins?
+27. Can you define environment variables inside your Jenkins pipeline?
+28. What is the role of artifacts in Jenkins, and why do we need to push them to Nexus instead of building and storing them locally?
+29. If you’re developing a Python-based application, how do you separate the packages needed for your local deployment to avoid interfering with globally installed packages?
+==================================================================================================================================================================
+- 20% Scripting automation
+- 25% Cloud deployments
+- 15% Monitoring and optimizing
+- 40% Team collaboration
+- 65.73% Debating on the infra/tool choices
+
+- On-demand support
+- Many alignment meetings
+- Managing system incidents
+- Balancing cost-efficiency
+- Technical review sessions
+- Cross-department collaboration
+- Defending infrastructure choices
+- Implementing stakeholder feedback
+
+==================================================================================================================================================================
+To become a successful DevOps engineer, you need a combination of technical skills, knowledge of various tools, and essential soft skills. 
+Here’s a detailed overview of the key tools, skills, and software that are crucial for a DevOps role:
+
+Technical Skills
+Programming and Scripting: Proficiency in languages such as Python, Ruby, Java, and scripting languages like Bash is essential for automating tasks and creating tools to streamline development and deployment processes
+
+Linux Fundamentals: A strong understanding of Linux is crucial, as it is the operating system of choice for many organizations. This includes knowledge of file systems, permissions, package management, and command-line utilities
+
+Infrastructure Management: Familiarity with infrastructure management tools like Ansible, Puppet, and Chef is important for automating server provisioning and configuration management
+
+Continuous Integration and Continuous Delivery (CI/CD): Mastery of CI/CD practices is vital. Tools such as Jenkins, GitLab CI, and Travis CI are commonly used to automate code integration and deployment processes
+
+Containerization and Orchestration: Knowledge of containerization tools like Docker and orchestration platforms like Kubernetes is essential for deploying and managing applications in a scalable manner
+
+Cloud Computing: Understanding cloud platforms such as AWS, Google Cloud Platform, and Microsoft Azure is critical for managing cloud infrastructure and services
+
+Version Control Systems: Proficiency in tools like Git and GitHub is necessary for managing code changes and collaborating with development teams
+
+Monitoring and Logging: Familiarity with monitoring tools like Nagios, Splunk, and Prometheus is important for tracking system performance and identifying issues
+
+Security Skills: Knowledge of security practices and tools, including vulnerability assessment and threat management, is increasingly important in the DevOps field, often referred to as DevSecOps
+
+Automation: The ability to automate repetitive tasks across the development and deployment pipeline is a core aspect of DevOps. This includes skills in creating automated testing and deployment processes
+
+Essential Tools
+
+    CI/CD Tools: Jenkins, GitLab CI, Travis CI, AWS CodeDeploy
+    Containerization: Docker, Kubernetes
+    Configuration Management: Ansible, Puppet, Chef
+    Version Control: Git, GitHub, GitLab
+    Monitoring: Nagios, Splunk, Prometheus
+    Cloud Platforms: AWS, Google Cloud Platform, Microsoft Azure
+
+Soft Skills
+
+    Communication and Collaboration: Effective communication is crucial for bridging the gap between development and operations teams, ensuring that everyone works towards common goals
+
+Problem-Solving: The ability to troubleshoot issues and find innovative solutions is vital in a fast-paced DevOps environment
+
+Adaptability: Being open to change and able to adapt to new tools and methodologies is important, as the DevOps landscape evolves rapidly
+
+Customer-Focused Approach: Understanding user needs and aligning DevOps practices with customer satisfaction is essential
+
+Proactivity and Continuous Learning: A commitment to ongoing education and staying updated with the latest technologies and practices is crucial for success in DevOps
+
+By developing these skills and familiarizing yourself with the relevant tools, you can position yourself effectively for a career in DevOps.
+
+==================================================================================================================================================================
+1. **What are the day-to-day activities of a DevOps Engineer?**
+2. **How do you overcome hurdles in DevOps?** 
+3. **Why do we need Shell scripting in DevOps?** 
+4. **What’s the difference between a `cron` job and running it under `sudo`?** 
+5. **How do you address security issues in `cron` jobs?** 
+6. **How do you set up Apache on a Linux server?** 
+7. **What are the steps to convert HTTP to HTTPS?** 
+8. **What are some limitations of Shell scripting?** 
+9. **What’s the difference between `$*` and `$@` in Bash?** 
+10. **Explain Primary Key vs. Foreign Key in databases.** 
+11. **What’s the difference between the `HAVING` and `WHERE` clauses in SQL?** 
+12. **Explain different types of JOIN commands in SQL.** 
+13. **What’s the difference between `DROP`, `TRUNCATE`, and `DELETE` in SQL?** 
+14. **How do you handle merging branches in Git?** 
+15. **Explain Continuous Deployment vs. Continuous Delivery.** 
+16. **How do you schedule tasks in Jenkins?** 
+17. **What’s the difference between Cron jobs and Jenkins scheduling?** 
+18. **What are agents in Jenkins, and how are they used?** 
+19. **Explain what EC2 is and how it differs from traditional VMs.** 
+20. **How do you create a server in EC2?** 
+21. **I have my own server; how do I create a VM on it?** 
+22. **What is AWS Lambda, and how does it work?** 
+23. **What is S3, and what are its use cases?** 
+24. **What are nodes in Kubernetes?** 
+25. **What is a Pod in Kubernetes?** 
+26. **What are Services in Kubernetes?** 
+27. **How does a Load Balancer work in Kubernetes?** 
+28. **Explain Blue-Green Deployment.** 
+29. **What are the basic commands in Terraform?** 
+30. **What are Modules in Terraform?** 
+31. **What are some basic Bash commands?** 
+32. **How do you access a service from any directory in Linux?** 
+33. **Where should system services be saved?** 
+
+==================================================================================================================================================================
+𝐃𝐞𝐯𝐎𝐩𝐬 𝐚𝐧𝐝 𝐂𝐥𝐨𝐮𝐝 𝐂𝐞𝐫𝐭𝐢𝐟𝐢𝐜𝐚𝐭𝐢𝐨𝐧𝐬 - 𝐑𝐨𝐥𝐞 𝐁𝐚𝐬𝐞𝐝
+
+1. 𝐂𝐥𝐨𝐮𝐝 𝐃𝐞𝐯𝐎𝐩𝐬 𝐄𝐧𝐠𝐢𝐧𝐞𝐞𝐫:
+🔹Linux Foundation Certified Engineer
+🔹HashiCorp Certified Terraform Associate
+🔹Kubernetes and Cloud Native Associate
+🔹Certified Kubernetes Application Developer
+🔹Docker Certified Associate 
+🔹Red Hat Certified Engineer
+🔹AWS DevOps Engineer Professional
+
+2. 𝐂𝐥𝐨𝐮𝐝 𝐒𝐨𝐥𝐮𝐭𝐢𝐨𝐧𝐬 𝐀𝐫𝐜𝐡𝐢𝐭𝐞𝐜𝐭:
+🔹Docker Certified Associate
+🔹Kubernetes and Cloud Native Associate
+🔹Certified Kubernetes Administrator
+🔹Linux Foundation Certified System Administrator
+🔹AWS Solutions Architect Professional
+
+==================================================================================================================================================================
+Tools to become DevOps Engineer:
+1. Linux
+2. Git & Github
+3. Bash Scripting
+4. Jenkins
+5. Terraform & Ansible
+6. Docker & Kubernetes
+7. Any Cloud Platform 
+
+- Getting proficient in Linux and basic scripting (Bash, Python)
+- Understanding how containerization works (Docker basics)
+- Familiarizing yourself with cloud fundamentals (AWS/Azure/GCP)
+- Building a simple CI/CD pipeline for a personal project
+- Learning version control with Git
+- Understanding basic networking concepts
+- Exploring infrastructure as code (starting with simple Terraform scripts)
+- Setting up basic monitoring and logging for your applications
+
+Senior DevOps engineer things to know:
+1. Cloud platforms: Get really good with AWS, Azure, or Google Cloud.
+2. Containers: Master Docker and Kubernetes.
+3. Automation: Learn tools like Ansible and GitHub Actions/Jenkins.
+4. Scripting: Improve your Python, Bash, or PowerShell skills.
+5. IAC: Learn Terraform and learn it well. Get proficient at writing scalable, dynamic, and DRY infra code.
+6. Monitoring: Understand how to use tools like Prometheus and Grafana. Learn to use these to set detailed logging, monitoring, and alerting.
+7. Security: Learn about DevSecOps practices. Understand how to use various tools to improve the security of build and deploy processes.
+8. Networking: Know the basics of how networks work in the cloud.
+9. Get very good at log analysis and troubleshooting. 
+10. Soft skills: Work on communication and teamwork. Get good at conflict management and negotiations.
+
+being a senior DevOps engineer means solving complex problems and helping your team. 
+Keep practicing and stay curious. The more you learn, the better you'll become.
+
+==================================================================================================================================================================
+https://github.com/milanm/DevOps-Roadmap.git
+https://github.com/localstack/localstack.git
+
+https://www.youtube.com/@AbhishekVeeramalla/playlists
+https://www.youtube.com/@PraveenSingampalli/playlists
+https://www.youtube.com/@cloudchamp/playlists
+
+https://youtu.be/1bqS5PrLN6o
+
+==================================================================================================================================================================
+1. Day-to-Day Activities as a DevOps Engineer?
+2. Project Architecture: - Can you describe the architecture of your current project? 
+3. Exposing Backend and Frontend to the Internet: - How is the backend and frontend deployment exposed to the internet? 
+4. Current CI/CD Workflow: - Can you describe your current CI/CD workflow? 5. Dockerfile Explanation: - What are the actual things happening in a Dockerfile? What do you specify, and what is the purpose of that file? 
+6. Kubernetes Architecture: - Can you explain the architecture of Kubernetes? 7. Handling OOM in Kubernetes Pods: - Have you encountered an Out of Memory (OOM) issue when deploying something in your Kubernetes pod? How did you handle it? 
+8. Creating Resources with Python in AWS: - Have you ever created any resources with Python in AWS? 
+9. Terraform State File: - How do you manage the Terraform state file within your team? Is it auto-generated, or do you manually change it? 
+10. Updating the Terraform State File: - How do you update the state file? Do you pass anything manually or does it work differently? 
+11. Terraform Folder Structure: - Can you tell me the folder structure or file structure of Terraform? 
+12. Terraform `.tfvars` File: - What does the Terraform `.tfvars` file do? 
+13. Variable Precedence in Terraform: - If you have a default value in a Terraform variable and a different value in a `.tfvars` file, which value is used during `terraform apply`? 
+14. Terraform Configuration for AWS SNS: - Can you write a Terraform configuration for creating an AWS SNS topic and SNS subscription, allowing for multiple email IDs? 
+15. Master Nodes and EKS: - How do master nodes function in EKS? 
+16. Backup and Rollback of EC2 Instances: - How do you back up an EC2 instance and roll it back? What is the instance status during this process? 
+17. VPC Peering: - What is VPC peering, and how do you set it up? 
+18. Docker Commands: - How do you build a Docker image from a file? - How do you start a container from an image? - How do you view the logs of a running container?
+
+==================================================================================================================================================================
+🚀 𝗦𝗦𝗟 𝗖𝗲𝗿𝘁𝗶𝗳𝗶𝗰𝗮𝘁𝗲𝘀 & 𝗡𝗴𝗶𝗻𝘅 𝗶𝗻 𝗗𝗲𝘃𝗢𝗽𝘀 🚀
+
+Whether you're managing a website, API, or microservices architecture, SSL certificates play a critical role in protecting data in transit and establishing trust with your users.
+
+🔒 𝗪𝗵𝘆 𝗦𝗦𝗟 𝗖𝗲𝗿𝘁𝗶𝗳𝗶𝗰𝗮𝘁𝗲𝘀 𝗠𝗮𝘁𝘁𝗲𝗿: 
+SSL (Secure Sockets Layer) certificates encrypt the data exchanged between a client and server, ensuring that sensitive information like login credentials, personal data, and payment details remain secure. With the increasing prevalence of cyber threats, integrating SSL/TLS is not just a best practice—it's a necessity.
+
+🔧 𝗦𝗲𝘁𝘁𝗶𝗻𝗴 𝗨𝗽 𝗦𝗦𝗟 𝘄𝗶𝘁𝗵 𝗡𝗴𝗶𝗻𝘅: 
+Nginx, known for its high performance and stability, is a popular choice for serving web content and acting as a reverse proxy. Combining Nginx with SSL certificates enhances the security of your web applications.
+
+Here's a simplified Steps:
+𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲 𝗼𝗿 𝗢𝗯𝘁𝗮𝗶𝗻 𝗮𝗻 𝗦𝗦𝗟 𝗖𝗲𝗿𝘁𝗶𝗳𝗶𝗰𝗮𝘁𝗲:
+You can generate a self-signed certificate for internal environments or obtain a certificate from a trusted Certificate Authority (CA) for production.
+
+𝗖𝗼𝗻𝗳𝗶𝗴𝘂𝗿𝗲 𝗡𝗴𝗶𝗻𝘅 𝗳𝗼𝗿 𝗦𝗦𝗟:
+Modify your Nginx configuration file to include the SSL directives:
+
+𝑠𝑒𝑟𝑣𝑒𝑟 {
+ 𝑙𝑖𝑠𝑡𝑒𝑛 443 𝑠𝑠𝑙;
+ 𝑠𝑒𝑟𝑣𝑒𝑟_𝑛𝑎𝑚𝑒 𝑦𝑜𝑢𝑟𝑑𝑜𝑚𝑎𝑖𝑛.𝑐𝑜𝑚;
+ 𝑠𝑠𝑙_𝑐𝑒𝑟𝑡𝑖𝑓𝑖𝑐𝑎𝑡𝑒 /𝑝𝑎𝑡ℎ/𝑡𝑜/𝑦𝑜𝑢𝑟/𝑐𝑒𝑟𝑡𝑖𝑓𝑖𝑐𝑎𝑡𝑒.𝑐𝑟𝑡;
+ 𝑠𝑠𝑙_𝑐𝑒𝑟𝑡𝑖𝑓𝑖𝑐𝑎𝑡𝑒_𝑘𝑒𝑦 /𝑝𝑎𝑡ℎ/𝑡𝑜/𝑦𝑜𝑢𝑟/𝑝𝑟𝑖𝑣𝑎𝑡𝑒.𝑘𝑒𝑦;
+ 𝑠𝑠𝑙_𝑝𝑟𝑜𝑡𝑜𝑐𝑜𝑙𝑠 𝑇𝐿𝑆𝑣1.2 𝑇𝐿𝑆𝑣1.3;
+ 𝑠𝑠𝑙_𝑐𝑖𝑝ℎ𝑒𝑟𝑠 𝐻𝐼𝐺𝐻:!𝑎𝑁𝑈𝐿𝐿:!𝑀𝐷5;
+ ...
+
+}
+
+Ensure that port 80 is redirected to 443 to enforce HTTPS connections:
+
+𝑠𝑒𝑟𝑣𝑒𝑟 {
+ 𝑙𝑖𝑠𝑡𝑒𝑛 80;
+ 𝑠𝑒𝑟𝑣𝑒𝑟_𝑛𝑎𝑚𝑒 𝑦𝑜𝑢𝑟𝑑𝑜𝑚𝑎𝑖𝑛.𝑐𝑜𝑚;
+ 𝑟𝑒𝑡𝑢𝑟𝑛 301 ℎ𝑡𝑡𝑝𝑠://$𝑠𝑒𝑟𝑣𝑒𝑟_𝑛𝑎𝑚𝑒$𝑟𝑒𝑞𝑢𝑒𝑠𝑡_𝑢𝑟𝑖;
+}
+
+𝗔𝘂𝘁𝗼𝗺𝗮𝘁𝗲 𝗖𝗲𝗿𝘁𝗶𝗳𝗶𝗰𝗮𝘁𝗲 𝗥𝗲𝗻𝗲𝘄𝗮𝗹:
+If using Let's Encrypt, set up a cron job or systemd timer to automatically renew the certificates. Certbot simplifies this by providing built-in hooks for renewing and reloading Nginx configurations.
+
+🌟 𝗕𝗲𝘀𝘁 𝗣𝗿𝗮𝗰𝘁𝗶𝗰𝗲𝘀:
+Enable HSTS (HTTP Strict Transport Security): This ensures that browsers always use HTTPS to connect to your site.
+
+𝗥𝗲𝗴𝘂𝗹𝗮𝗿𝗹𝘆 𝗨𝗽𝗱𝗮𝘁𝗲 𝗡𝗴𝗶𝗻𝘅: Stay updated with the latest security patches and performance improvements.
+
+==================================================================================================================================================================
+🔧 A Day in the Life of a DevOps Engineer 🛠️
+
+🕘 Morning Stand-Up & Planning
+My day begins with a stand-up meeting to review tasks, discuss blockers, and set priorities. I then check the status of CI/CD pipelines and address any issues from the previous day.
+🔍 Monitoring Infrastructure
+Next, I monitor system health using tools like Prometheus and Grafana, addressing any anomalies or alerts from tools such as Splunk. This helps in maintaining optimal performance and security.
+⚙️ CI/CD Pipeline Management
+Mid-morning is dedicated to optimizing and troubleshooting our CI/CD pipelines with Jenkins or GitLab. I fix build issues and work with developers on automation improvements.
+🚀 Infrastructure as Code (IaC)
+I then focus on IaC tasks, using Terraform or CloudFormation to manage cloud resources and Docker for containerization. This involves scripting and scaling infrastructure as needed.
+🛡️ Security & Code Review
+Security is key, so I review code for vulnerabilities with SonarQube and manage secrets with HashiCorp Vault. I also handle access management and security audits.
+🔄 Troubleshooting & Issue Resolution
+Throughout the day, I address any production issues, analyze logs, and collaborate with the dev team to resolve problems swiftly.
+🤝 Collaboration & Knowledge Sharing
+Later, I participate in cross-team meetings, share updates, and document improvements. Collaboration helps us stay aligned and enhance our processes.
+📚 Learning & Experimentation
+I allocate time to explore new tools and techniques, whether it's a Kubernetes feature or an improved deployment strategy, to stay current and innovative.
+📅 End of Day Review
+I wrap up by reviewing progress, updating tasks in Jira, and preparing for the next day’s stand-up.
+🔑 Key Takeaway:
+As a DevOps Engineer, my day revolves around monitoring, automation, troubleshooting, and collaboration to keep our systems stable, secure, and evolving.
+
+==================================================================================================================================================================
+Production Checklist for any major deployment/upgrade: 
+
+✅ Configure liveness & readiness probe for the application
+✅ Prepare a backup & restore strategy
+✅ Make sure the application is deployed as a set of replicas (Deployment/Daemon-set)
+✅ Consider using anti-affinity rules for the deployment to place pods/containers evenly across the cluster
+✅ Set Pod disruption budgets
+✅ Set memory limits and requests for all containers
+✅ Disable CPU limits — unless you have a good use case
+✅ Set an appropriate Quality of Service (QoS) for Pods
+✅ Use the Horizontal Pod Autoscaler for apps with variable usage patterns
+✅ Externalise all configuration
+✅ Define appropriate LimitRange & ResourceQuota on Namespaces for apps
+✅ Enable Network Policies
+✅ Structured Logging & monitoring should be in-place
+✅ Pod Security Policies (PSA, OPA, GateKeeper) should be in-place
+
+𝐏.𝐒. 𝐃𝐨𝐧'𝐭 𝐏𝐮𝐬𝐡 𝐓𝐨 𝐏𝐫𝐨𝐝𝐮𝐜𝐭𝐢𝐨𝐧 𝐎𝐧 𝐅𝐫𝐢𝐝𝐚𝐲 
+
+==================================================================================================================================================================
+Most Asked Scenario-Based Linux Interview Questions for DevOps Engineers:
+
+1. Troubleshooting Services:💡
+ • Scenario: Your application is running on an Apache web server, but the website is not accessible. What steps would you take to identify and resolve the issue?
+
+2. Disk Space Management:💡
+ • Scenario: You receive an alert that a production server is running low on disk space. How would you identify the files or directories consuming the most space and clean it up safely?
+
+3. Process Monitoring and Optimization:💡
+ • Scenario: A server is experiencing high CPU usage, and the application performance is degraded. How would you identify the root cause and optimize the processes?
+
+4. User Management and Permissions:💡
+ • Scenario: A user is unable to access a specific directory even though they belong to the correct group. How would you troubleshoot and resolve this permission issue?
+
+5. Network Connectivity Issues:💡
+ • Scenario: Your server is unable to reach a specific external IP address. What steps would you take to diagnose and resolve this network connectivity issue?
+
+6. File Recovery:💡
+ • Scenario: An important configuration file has been accidentally deleted. How would you attempt to recover this file if there are no backups?
+
+7. Automating Tasks with Shell Scripts:💡
+ • Scenario: You need to automate the deployment of an application. How would you use shell scripting to automate the process, including stopping services, copying files, and restarting services?
+
+8. Log Analysis:💡
+• Scenario: An application is intermittently failing. How would you use Linux command-line tools to analyze logs and identify the root cause of these failures?
+
+9. Service Start-Up Failure:💡
+ • Scenario: A critical service fails to start after a server reboot. How would you diagnose and resolve the startup failure?
+
+10. Kernel Tuning and Optimization:💡
+ • Scenario: You need to optimize the server’s performance for a high-traffic application. How would you tune kernel parameters to improve system performance?
+
+11. Managing Crontab Entries:💡
+ • Scenario: A scheduled cron job did not execute as expected. How would you troubleshoot this issue and ensure the job runs correctly in the future?
+
+12. Handling Large File Transfers:💡
+• Scenario: You need to transfer a large file securely from one server to another. What methods would you use to ensure the transfer is efficient and secure?
+
+13. Deploying Updates with Zero Downtime:💡
+• Scenario: You need to deploy updates to an application without causing downtime. How would you achieve this on a Linux server?
+
+14. Managing System Resources:💡
+• Scenario: The server's memory usage is consistently high, affecting application performance. What steps would you take to identify the cause and manage system resources effectively?
+
+==================================================================================================================================================================
+🚀 How to Crack DevOps Interviews & Build Real Experience 🚀
+
+1. Master the Basics
+👉 Focus on fundamental DevOps concepts like CI/CD pipelines, containerization (Docker, Kubernetes), and cloud platforms (AWS, Azure, GCP). 
+Start by learning tools like Git, Jenkins and Terraform.
+
+2. Hands-on Practice: Build Personal Projects
+👉 Employers love seeing real-world projects. Set up your own environment:
+Create a simple web app and automate deployment with Jenkins.
+Set up Docker containers and deploy them on a local Kubernetes cluster.
+Use Terraform to manage infrastructure as code in a cloud environment. Document everything in a GitHub repository and add it to your resume!
+
+3. Leverage Free Resources & Certifications
+👉 There are tons of free learning resources:
+Use AWS Free Tier to experiment with cloud resources.
+Try out Kubernetes playgrounds like Katacoda.
+Look for free certifications or trials like Terraform Associate or AWS Practitioner. Certifications show your commitment and give you an edge in interviews.
+
+4. Contribute to Open-Source Projects
+👉 Contributing to DevOps-related open-source projects is an excellent way to gain experience. You’ll learn from experienced developers and improve your skills in real-world environments. Websites like GitHub or GitLab are great places to start!
+
+5. Understand Real-Time Scenarios
+👉 Be prepared to talk through real-world problems. Study common interview questions like:
+How do you handle a failed deployment in production?
+How do you ensure zero downtime during a deployment?
+What’s your strategy for scaling infrastructure in the cloud?
+
+6. Network & Learn from the Community
+👉 Connect with DevOps professionals on platforms like LinkedIn or attend local meetups. Networking can open doors to opportunities and provide valuable industry insights.
+
+7. Emphasize Soft Skills
+👉 DevOps isn’t just about tools. Communication, collaboration, and problem-solving are essential. Be ready to explain how you’ve worked in a team to solve complex issues, even in non-DevOps roles.
+
+8. Prepare for Real-Time Scenario-Based Questions
+👉 Practice explaining how you would troubleshoot a failed deployment or improve pipeline efficiency. Always relate your answers to real-world applications and explain the "why" behind your choices.
+
+💡 Pro Tip: If you don’t have direct experience, focus on projects, certifications, and what you’ve learned. 
+Highlighting your growth mindset and willingness to learn is crucial!
+
+==================================================================================================================================================================
+
+𝐉𝐞𝐧𝐤𝐢𝐧𝐬
+- How do you integrate unit testing, integration testing, and end-to-end testing into a Jenkins pipeline?
+- How do you troubleshoot common Jenkins issues, such as build failures or performance problems?
+- How do you configure a Jenkins job to trigger automatically on code changes in a Git repository?
+
+𝐋𝐢𝐧𝐮𝐱
+- How do you monitor the CPU and memory of the linux systems?
+- Explain the concept of system calls and how they interact with the kernel.
+- How do you manage file systems using fsck, mount, and umount?
+- How do you secure a Linux system using iptables or firewalld?
+
+𝐀𝐧𝐬𝐢𝐛𝐥𝐞
+- What are dynamic inventory in ansible and how do you manage it?
+- Create a ansible role to install httpd in 10 servers with tags
+- Can you design a playbook with notifiers and handlers for 10 tools installations?
+
+𝐊𝐮𝐛𝐞𝐫𝐧𝐞𝐭𝐞𝐬
+- Design the kubernetes manifest file to create the CronJob with concurrency as forbid and to run for every 1 minute with nginx container having tag as latest
+- What will be the command to add the annotation and the labels for the existing pod?
+- Design the kubernetes cluster with Ingress.
+- A sudden surge in traffic causes a web application to become unresponsive what will be the steps you will take to mitigate
+- Design the deployment of the pod with replica set set as 3 and having apache httpd image running as a container.
+
+𝗖𝗜/𝗖𝗗
+- How do you integrate automated testing into a CI/CD pipeline for ETL jobs?
+- How do you manage environment-specific configurations in a CI/CD pipeline?
+- How is version control managed for database schemas and ETL scripts in a CI/CD pipeline?
+
+𝐃𝐨𝐜𝐤𝐞𝐫
+- How do you define a multi-container application using Docker Compose?
+- How do you ensure the security of Docker images and containers?
+- How does Docker handle network communication between containers?
+
+𝗣𝘆𝘁𝗵𝗼𝗻
+- What are the key differences between Python 2 and Python 3?
+- How do you integrate Python with popular DevOps tools like Jenkins and Ansible?
+- How do you use Python to interact with cloud platforms like AWS, GCP, and Azure?
+- How do you troubleshoot Python scripts in a DevOps environment?
+- What are the benefits of using Python for configuration management over other tools?
+
+-How do you handle credentials for a PHP application accessing MySQL or any other secrets in Docker?
+-What is the command for running container logs?
+-Have you upgraded any Kubernetes clusters?
+-How do you deploy an application in a Kubernetes cluster?
+-How do you communicate with a Jenkins server and a Kubernetes cluster?
+-Which DevOps tools are you proficient with?
+-Can you describe the CI/CD workflow in your project?
+-How do you handle the continuous delivery (CD) aspect in your projects?
+-What methods do you use to check for code vulnerabilities?
+-What AWS services are you proficient in?
+-How would you access data in an S3 bucket from Account A when your application is running on an EC2 instance in Account B?
+-How do you provide access to an S3 bucket, and what permissions need to be set on the bucket side?
+-How can Instance 2, with a static IP, communicate with Instance 1, which is in a private subnet and mapped to a multi-AZ load balancer?
+-How do you pass arguments to a VPC while using the `terraform import` command?
+-What are the prerequisites before importing a VPC in Terraform?
+-If an S3 bucket was created through Terraform but someone manually added a policy to it, how do you handle this situation using IaC?
+-For an EC2 instance in a private subnet, how can it verify and download required packages from the internet without using a NAT gateway or bastion host? Are there any other AWS services that can facilitate this?
+-What is the typical latency for a load balancer, and if you encounter high latency, what monitoring steps would you take?
+-If your application is hosted in S3 and users are in different geographic locations, how can you reduce latency?
+-Which services can be integrated with a CDN (Content Delivery Network)?
+-How do you dynamically retrieve VPC details from AWS to create an EC2 instance using IaC?
+-How do you manage unmanaged AWS resources in Terraform?
+-Write BASH Script for Prime numbers.
+
+==================================================================================================================================================================
+Important HTTP status codes every DevOps engineer should know when troubleshooting:
+
+🚫 Status code 403 Forbidden:
+This usually occurs due to user permission issues, like incorrect IAM role or policy assignments.
+
+🔍 Status code 404 Resource Not Found:
+This typically happens when a route or method is unavailable on API Gateway or the backend server.
+
+⚠️ Status code 502 Bad Gateway:
+Occurs when a server acting as a gateway or proxy (e.g., Nginx, Apache, AWS API Gateway) receives an invalid or no response from the upstream server it's trying to communicate with.
+
+⛔ Status code 503 Service Unavailable:
+Indicates that the server is temporarily unable to handle the request, often due to overload or maintenance.
+
+==================================================================================================================================================================
+1. Learn Linux Fundamentals
+2. Master Git and Version Control
+3. Understand Networking Basics
+4. Learn Scripting (Bash, Python)
+5. Master CI/CD Concepts (Jenkins, GitLab)
+6. Learn Containerization (Docker)
+7. Master Orchestration (Kubernetes)
+8. Learn Cloud Platforms (AWS, Azure, GCP)
+9. Understand Infrastructure as Code (Terraform, Ansible)
+10. Learn Monitoring and Logging Tools (ELK)
+11. Practice Automation Everywhere!
+12. Stay updated on DevOps best practices
+
+🏆 Congratulations, you're a DevOps Engineer!
+
+==================================================================================================================================================================
+𝐈𝐧𝐭𝐞𝐫𝐯𝐢𝐞𝐰 𝐐𝐮𝐞𝐬𝐭𝐢𝐨𝐧𝐬 📄
+
+1. Day to day 𝗮𝗰𝘁𝗶𝘃𝗶𝘁𝗶𝗲𝘀 in DevOps Cloud.
+2. How effective did you used 𝗞𝘂𝗯𝗲𝗿𝗻𝗲𝘁𝗲𝘀 and 𝗗𝗼𝗰𝗸𝗲𝗿 in day to day activity.
+3. Let's assume that there is one existing 𝗰𝗹𝘂𝘀𝘁𝗲𝗿 which is getting 𝗿𝗲𝘀𝘁𝗮𝗿𝘁 again and again. And it is 𝗼𝘂𝘁 𝗼𝗳 𝗺𝗲𝗺𝗼𝗿𝘆 as well. So you have received an alert. So how will you 𝘁𝗿𝗼𝘂𝗯𝗹𝗲𝘀𝗵𝗼𝗼𝘁 this issue and what is the checklist you initially check.
+4. Can you explain the 𝘀𝗲𝗰𝘂𝗿𝗶𝘁𝘆 𝗳𝗲𝗮𝘁𝘂𝗿𝗲𝘀 which is available in 𝗞𝘂𝗯𝗲𝗿𝗻𝗲𝘁𝗲𝘀.
+5. Can you explain the 𝗰𝗼𝗺𝗽𝗼𝗻𝗲𝗻𝘁𝘀 of 𝗞𝘂𝗯𝗲𝗿𝗻𝗲𝘁𝗲𝘀.
+6. Are you aware of the 𝗲𝘅𝗶𝘁 𝗰𝗼𝗱𝗲.
+7. There is an existing 𝗽𝗼𝗱 which is 𝗻𝗼𝘁 getting 𝘀𝗰𝗵𝗲𝗱𝘂𝗹𝗲𝗱. How will you fix this issue.
+8. You have the exposure to 𝗶𝗻𝗰𝗶𝗱𝗲𝗻𝘁 𝗺𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁 right? How will you 𝗰𝗮𝘁𝗲𝗴𝗼𝗿𝗶𝘇𝗲 the 𝗽𝗿𝗶𝗼𝗿𝗶𝘁𝘆
+9. What is the 𝗿𝗲𝘀𝗽𝗼𝗻𝘀𝗲 𝘁𝗶𝗺𝗲 of 𝗣𝟭, 𝗣𝟮, 𝗣𝟯 and 𝗣𝟰 ticket.
+10. What is the 𝗿𝗲𝘀𝗼𝗹𝘂𝘁𝗶𝗼𝗻 𝘁𝗶𝗺𝗲 for 𝗣𝟮.
+11. How will you 𝗰𝗮𝘁𝗲𝗴𝗼𝗿𝗶𝘇𝗲 the issue as  𝗣𝟭, 𝗣𝟮, 𝗣𝟯 or 𝗣𝟰.
+12. Difference between 𝗜𝗥 and 𝗦𝗥
+13. What about the 𝗺𝗼𝗻𝗶𝘁𝗼𝗿𝗶𝗻𝗴 part. Do you have any exposure to that?
+14. What are the things you will do with respect to the 𝗺𝗼𝗻𝗶𝘁𝗼𝗿𝗶𝗻𝗴?
+15. Define 𝗹𝗼𝗴𝘀 and 𝗺𝗲𝘁𝗿𝗶𝗰𝘀
+16. So let's consider, in your 𝗱𝗮𝘀𝗵𝗯𝗼𝗮𝗿𝗱, you observed from one application or one 𝗰𝗹𝘂𝘀𝘁𝗲𝗿 the 𝘂𝘁𝗶𝗹𝗶𝘇𝗮𝘁𝗶𝗼𝗻 was 𝗵𝗶𝗴𝗵. Which were you can identify using the 𝗱𝗮𝘀𝗵𝗯𝗼𝗮𝗿𝗱 with the 𝗺𝗲𝘁𝗿𝗶𝗰𝘀 which is already created. So what will be the first step and how will you 𝗳𝗶𝘅 the 𝗶𝘀𝘀𝘂𝗲.
+17. Do you have any experience in 𝗰𝗿𝗲𝗮𝘁𝗶𝗻𝗴 the 𝗺𝗼𝗻𝗶𝘁𝗼𝗿𝘀?
+18. Can you explain more about 𝗖𝗹𝗼𝘂𝗱𝘄𝗮𝘁𝗰𝗵 and how have you configured it.
+19. Do you have any exposure to 𝗜𝗔𝗖 tools like 𝗧𝗲𝗿𝗿𝗮𝗳𝗼𝗿𝗺?
+20. Write some sample 𝗗𝗼𝗰𝗸𝗲𝗿𝗳𝗶𝗹𝗲 to create an 𝗡𝗴𝗶𝗻𝘅 𝗶𝗺𝗮𝗴𝗲
+21. What do you know about 𝘁𝗲𝘀𝘁𝗶𝗻𝗴
+1. What is your daily 𝘁𝗲𝗰𝗵𝗻𝗶𝗰𝗮𝗹 𝗮𝗰𝘁𝗶𝘃𝗶𝘁𝗶𝗲𝘀
+2. Is it 𝗺𝗮𝗻𝗱𝗮𝘁𝗼𝗿𝘆 to have 𝗽𝗵𝘆𝘀𝗶𝗰𝗮𝗹 𝘀𝗲𝗿𝘃𝗲𝗿. What kind of 𝘀𝗲𝗿𝘃𝗲𝗿 that you really like 𝗶𝗻𝗳𝗿𝗮𝘀𝘁𝗿𝘂𝗰𝘁𝘂𝗿𝗲 must have
+3. How are we going to install our 𝗮𝗽𝗽𝗹𝗶𝗰𝗮𝘁𝗶𝗼𝗻. What are the 𝗮𝗿𝗰𝗵𝗶𝘁𝗲𝗰𝘁𝘂𝗿𝗲 that you are 𝗮𝘄𝗮𝗿𝗲 𝗮𝗯𝗼𝘂𝘁.
+4. Are you aware about 𝗗𝗼𝗰𝗸𝗲𝗿 and 𝗞𝘂𝗯𝗲𝗿𝗻𝗲𝘁𝗲𝘀.
+5. Why do we need 𝗗𝗼𝗰𝗸𝗲𝗿
+6. What is 𝗰𝗼𝗻𝘁𝗮𝗶𝗻𝗲𝗿?
+7. The thing I talked about 𝗮𝗽𝗽𝗹𝗶𝗰𝗮𝘁𝗶𝗼𝗻. That could be 𝗶𝗻𝘀𝘁𝗮𝗹𝗹𝗲𝗱 as a 𝗺𝗶𝗰𝗿𝗼𝘀𝗲𝗿𝘃𝗶𝗰𝗲. Can I directly put it in the 𝗱𝗼𝗰𝗸𝗲𝗿 𝗰𝗼𝗻𝘁𝗮𝗶𝗻𝗲𝗿?
+8. Uses of 𝗞𝘂𝗯𝗲𝗿𝗻𝗲𝘁𝗲𝘀 over 𝗱𝗼𝗰𝗸𝗲𝗿 𝗰𝗼𝗻𝘁𝗮𝗶𝗻𝗲𝗿?
+9. One of the 𝗽𝗼𝗱 is down. Which runs the 𝗰𝗼𝗻𝘁𝗮𝗶𝗻𝗲𝗿 and my 𝗮𝗽𝗽𝗹𝗶𝗰𝗮𝘁𝗶𝗼𝗻 is entirely 𝗱𝗼𝘄𝗻 which connects to my 𝗱𝗮𝘁𝗮𝗯𝗮𝘀𝗲 and 𝗱𝗮𝘁𝗮𝗯𝗮𝘀𝗲 is also 𝗱𝗼𝘄𝗻. So basically, the entire 𝗮𝗽𝗽𝗹𝗶𝗰𝗮𝘁𝗶𝗼𝗻 is 𝗻𝗼𝘁 𝗿𝗲𝗮𝗰𝗵𝗮𝗯𝗹𝗲. So, what are the 𝘀𝘁𝗲𝗽𝘀 that you would take care to 𝗯𝗿𝗶𝗻𝗴 𝘂𝗽 the 𝗮𝗽𝗽𝗹𝗶𝗰𝗮𝘁𝗶𝗼𝗻 along with the 𝗱𝗮𝘁𝗮𝗯𝗮𝘀𝗲.
+10. Do you know 𝗺𝗼𝗻𝗶𝘁𝗼𝗿𝗶𝗻𝗴 using the AWS 𝗖𝗹𝗼𝘂𝗱𝗪𝗮𝘁𝗰𝗵?
+11. I have some 𝗺𝗲𝘁𝗿𝗶𝗰𝘀 on 𝗖𝗹𝗼𝘂𝗱𝗪𝗮𝘁𝗰𝗵 and I have 𝗰𝗿𝗲𝗮𝘁𝗲𝗱 some of the 𝗮𝗹𝗲𝗿𝘁𝘀. For me to get the 𝗻𝗼𝘁𝗶𝗳𝗶𝗰𝗮𝘁𝗶𝗼𝗻. How do I do the 𝘀𝗲𝘁𝘂𝗽 ?
+12. What if I 𝗱𝗼𝗻'𝘁 𝘄𝗮𝗻𝘁 to get an 𝗲𝗺𝗮𝗶𝗹 and I wanted the alert to be routed to a 𝗰𝗼𝗺𝗺𝘂𝗻𝗶𝗰𝗮𝘁𝗶𝗼𝗻 𝗰𝗵𝗮𝗻𝗻𝗲𝗹.
+13. How can we 𝘁𝗮𝗸𝗲 𝗰𝗮𝗿𝗲 of 𝘀𝗲𝗰𝘂𝗿𝗶𝘁𝘆.
+14. Do understand 𝗮𝗻𝘆𝘁𝗵𝗶𝗻𝗴 about 𝗹𝗮𝗺𝗯𝗱𝗮
+15. Have you worked on 𝗧𝗲𝗿𝗿𝗮𝗳𝗼𝗿𝗺 or 𝗖𝗹𝗼𝘂𝗱𝗙𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻.
+16. How would you do 𝗰𝗵𝗮𝗻𝗴𝗲𝘀 to the 𝗧𝗲𝗿𝗿𝗮𝗳𝗼𝗿𝗺
+17. Do you know 𝗵𝗼𝘄 to 𝗰𝗿𝗲𝗮𝘁𝗲 a 𝗣𝗥
+18. Have you worked on 𝗰𝗿𝗲𝗮𝘁𝗶𝗼𝗻 of a 𝗽𝗶𝗽𝗲𝗹𝗶𝗻𝗲
+19. How is your 𝗶𝗻𝗰𝗶𝗱𝗲𝗻𝘁 𝗺𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁
+20. Explain me the 𝗹𝗶𝗳𝗲 𝗰𝘆𝗰𝗹𝗲 of 𝗶𝗻𝗰𝗶𝗱𝗲𝗻𝘁 𝗺𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁
+21. What is 𝗶𝗻𝗰𝗶𝗱𝗲𝗻𝘁
+22. What is 𝗽𝗿𝗶𝗼𝗿𝗶𝘁𝘆
+23. Do you know what is 𝗽𝗿𝗼𝗯𝗹𝗲𝗺 𝘁𝗶𝗰𝗸𝗲𝘁?
+24. Have you been part of any 𝗥𝗖𝗔 and 𝗳𝗶𝘅𝗶𝗻𝗴 it with respect to 𝗶𝗻𝗳𝗿𝗮𝘀𝘁𝗿𝘂𝗰𝘁𝘂𝗿𝗲.
+25. What are the 𝘁𝗼𝗼𝗹𝘀 that you have 𝘂𝘀𝗲𝗱 for 𝗺𝗼𝗻𝗶𝘁𝗼𝗿𝗶𝗻𝗴?
+26. What are the 𝗺𝗲𝘁𝗿𝗶𝗰𝘀 that you have 𝘂𝘀𝗲𝗱 in 𝗚𝗿𝗮𝗳𝗮𝗻𝗮.
+
+1. Can you explain the concept of hashtag#infrastructure as code (IaC) and how you have implemented it in your previous roles?
+
+2. How do you approach hashtag#containerization using Docker, and what are some best practices you follow?
+
+3. What is your experience with automation tools like hashtag#Ansible, Puppet, or Chef? Can you give an example of a project where you used one of these tools?
+
+4. How do you hashtag#monitor and hashtag#troubleshoot issues in a distributed system? What tools do you use for logging, monitoring, and alerting?
+
+5. Can you describe your experience with cloud providers like hashtag#AWS, hashtag#Azure, or hashtag#Google Cloud? How have you used their services in previous projects?
+
+6. How do you implement continuous integration and hashtag#continuous hashtag#deployment (CI/CD) pipelines? What tools have you used for this purpose?
+
+7. How do you handle security and hashtag#compliance in your DevOps practices? Can you give an example of a project where you had to address specific security requirements?
+
+8. Can you explain the concept of hashtag#observability and how you have implemented it in your previous roles?
+
+9. How do you approach hashtag#collaboration and communication between development and operations teams? Can you give an example of a successful collaboration you've been part of?
+
+10. Can you describe a particularly challenging hashtag#project you worked on and how you overcame any obstacles that came up?
+
+hashtag#Remember, this is just a starting point, and you should tailor your questions to the specific requirements and needs of the position and organization.
+
+Also, be hashtag#prepared to ask questions during the interview to understand the company's DevOps practices, tools, and culture. Some possible questions to ask include:
+
+- Can you describe your current hashtag#DevOps hashtag#workflow and tools used?
+- How does the hashtag#company approach continuous learning and professional development for hashtag#DevOps engineers?
+- What are the hashtag#biggest challenges facing the hashtag#DevOps team right now, and how do you see this role hashtag#contributing to solving them?
+
+1. Tell me about your project.
+2. How does GitLab trigger pipelines automatically when a developer pushes code?
+3. How do you declare dependent stages in a CI/CD YAML file?
+4. What is `terraform init`?
+5. What is `backend.tf`?
+6. What does `terraform plan` do?
+7. What happens if you give the wrong configuration or code in Terraform and run it?
+8. Where do you store Docker images?
+9. Kubernetes: Describe the `pod` command.
+10. How do you declare context in Kubernetes?
+11. What if you have more contexts and namespaces in Kubernetes?
+12. What are the types of services in Kubernetes?
+13. NodePort vs. ClusterIP — What's the difference?
+14. Horizontal Pod Scaling vs. Vertical Pod Scaling — Explain.
+15. Limit vs. request in a Kubernetes manifest file.
+16. What is AWS Lambda, and what have you done with it?
+17. How do you set up CloudWatch alarms, metrics, and alerts?
+18. How do you create dashboards on CloudWatch for different resources or services on AWS?
+19. Which build tool do you use for Java? How about for Python?
+20. Explain the complete structure of GitLab CI/CD with stages.
+21. How do you integrate Azure DevOps with AWS for deployments?
+22. Write Terraform code for an EC2 instance with security groups using `depends_on`.
+
+DevOps technical interview questions: 
+1. Day to day 𝗮𝗰𝘁𝗶𝘃𝗶𝘁𝗶𝗲𝘀 in DevOps Cloud. 
+2. How effective did you used 𝗞𝘂𝗯𝗲𝗿𝗻𝗲𝘁𝗲𝘀 and 𝗗𝗼𝗰𝗸𝗲𝗿 in day to day activity. 
+3. What happens when you run a container in Kubernetes? Explain the internal workings. 
+4. Can you explain the 𝘀𝗲𝗰𝘂𝗿𝗶𝘁𝘆 𝗳𝗲𝗮𝘁𝘂𝗿𝗲𝘀 which is available in 𝗞𝘂𝗯𝗲𝗿𝗻𝗲𝘁𝗲𝘀. 
+5. Can you explain the 𝗰𝗼𝗺𝗽𝗼𝗻𝗲𝗻𝘁𝘀 of 𝗞𝘂𝗯𝗲𝗿𝗻𝗲𝘁𝗲𝘀. 
+6. Are you aware of the 𝗲𝘅𝗶𝘁 𝗰𝗼𝗱𝗲. 
+7. There is an existing 𝗽𝗼𝗱 which is 𝗻𝗼𝘁 getting 𝘀𝗰𝗵𝗲𝗱𝘂𝗹𝗲𝗱. How will you fix this issue. 
+8. You have the exposure to 𝗶𝗻𝗰𝗶𝗱𝗲𝗻𝘁 𝗺𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁 right? How will you 𝗰𝗮𝘁𝗲𝗴𝗼𝗿𝗶𝘇𝗲 the 𝗽𝗿𝗶𝗼𝗿𝗶𝘁𝘆 
+9. How do Prometheus and Grafana interact? What is the source of data for Prometheus?. 
+10. Explain how Linux mechanisms work, especially when the system starts.. 
+11. How can we enable communication between 500 AWS accounts internally?
+12. Difference between 𝗜𝗥 and 𝗦𝗥 
+13. What about the 𝗺𝗼𝗻𝗶𝘁𝗼𝗿𝗶𝗻𝗴 part. Do you have any exposure to that? 
+14. What are the things you will do with respect to the 𝗺𝗼𝗻𝗶𝘁𝗼𝗿𝗶𝗻𝗴? 
+15. Define 𝗹𝗼𝗴𝘀 and 𝗺𝗲𝘁𝗿𝗶𝗰𝘀 
+16. So let's consider, in your 𝗱𝗮𝘀𝗵𝗯𝗼𝗮𝗿𝗱, you observed from one application or one 𝗰𝗹𝘂𝘀𝘁𝗲𝗿 the 𝘂𝘁𝗶𝗹𝗶𝘇𝗮𝘁𝗶𝗼𝗻 was 𝗵𝗶𝗴𝗵. Which were you can identify using the 𝗱𝗮𝘀𝗵𝗯𝗼𝗮𝗿𝗱 with the 𝗺𝗲𝘁𝗿𝗶𝗰𝘀 which is already created. So what will be the first step and how will you 𝗳𝗶𝘅 the 𝗶𝘀𝘀𝘂𝗲. 
+17. Do you have any experience in 𝗰𝗿𝗲𝗮𝘁𝗶𝗻𝗴 the 𝗺𝗼𝗻𝗶𝘁𝗼𝗿𝘀? 
+18. What is a sidecar container in Kubernetes, and what are its use cases?
+19. Do you have any exposure to 𝗜𝗔𝗖 tools like 𝗧𝗲𝗿𝗿𝗮𝗳𝗼𝗿𝗺? 
+20. Write some sample 𝗗𝗼𝗰𝗸𝗲𝗿𝗳𝗶𝗹𝗲 to create an 𝗡𝗴𝗶𝗻𝘅 𝗶𝗺𝗮𝗴𝗲 
+21. What do you know about 𝘁𝗲𝘀𝘁𝗶𝗻𝗴
+
+1. How do you uncommit the changes that have already been pushed to GitHub? 
+2. If there is suddenly the file is deleted in git how do you get it back? 
+3. Can you increase the size of the root volume without shutting down the instance?
+4. If you lost the .pem file then how will you connect to EC2? 
+5. S3 bucket having a policy for only read-only but you’re having full access for you? Can you modify s3 objects? 
+6. Difference between Classic ELB and Application ELB?
+7. How many subnets are assigned to the routing table? 
+8. In your VPC all IPS are finished you require resources how to provision it? 
+9. Are you only using cloud watch for monitoring?
+10.If your using load balancing in 2 availability zones den which load balancer you should use?
+11. can you write docker file where Linux env condition deploy static webserver 
+12. Is it possible to run any VM in AWS without creating any EC2 instance ? 
+13. I want to create a pipeline in Jenkins which needs to have 10 different stages and based on my input it needs to execute some stages not every stages how you will configure that .
+14. What are the Terraform modules? Have used any modules in the project?
+15. Is it possible to configure communication between 2 servers those are having private access
+16. What happens when you delete /var/lib/docker/overlay?
+17. Write a simple script that calls with “Foo” prints “bar” and when called with “bar” prints “foo”. Every other option should print “Try 
+again”?
+18. Tell all the scenarios too implement the security in Kubernetes.
+19. Your EKS application is experiencing higher than expected traffic. How would you automatically scale the Pods?
+20. Your team needs to be alerted when the CPU usage of any Pod in your EKS cluster exceeds 80% for more than 5 minutes. How would you set this up?
+21. Your team wants a Grafana dashboard to visualize the HTTP request latency of your applications running in EKS. How would you achieve this?
+
+1. Write a shell script to find and delete all files in a directory that are older than 30 days.
+2. Create a script to monitor the disk usage of a server. If usage exceeds 80%, log the details to a file and send an alert email.
+3. Write a script that renames all .txt files in a directory by appending the current date to the filename.
+4. Create a script that checks if a particular service (e.g., httpd or nginx) is running. If not, it should restart the service and log the action.
+5. Write a script to monitor CPU and memory usage every minute and log the details if CPU usage is above 90% or memory usage exceeds 75%.
+6. Write a script that performs a backup of a specified directory and compresses it with the current date in the filename. Schedule it to run daily using cron.
+7. Create a script to check the availability of a list of websites. For each site, if it's unreachable, log the URL and send an alert.
+8. Write a Python script using boto3 to list all S3 buckets in an AWS account and their respective sizes.
+9. Develop a script that starts and stops EC2 instances based on a schedule (e.g., start at 8 AM and stop at 8 PM).
+10. Create a script that monitors a specified directory and automatically deletes any files larger than 100 MB.
+
+==================================================================================================================================================================
+DevOps for XY: 
+aws 
+git
+terraform 
+ansible 
+python 
+linux 
+
+==================================================================================================================================================================
+1. Could you give an introduction yourself and your daily activities as a DevOps engineer?
+2. In Terraform, I’ve created a database with sensitive information like a password, and I don't want it to appear in the output. How can I do that?
+3. Which parameter do I need to pass in Terraform to avoid displaying sensitive information like a password in the output?
+4. In a Dockerfile, which user performs what action, and how can I specify the user?
+5. What are the different networking types in Docker?
+6. What is the difference between a bridge network and an overlay network in Docker?
+7. How does a user access an application deployed in a Kubernetes cluster? What is the process?
+8. Let’s say there’s an application deployed in AWS, and we want it to be highly available. How can we achieve high availability?
+9. In Terraform, there is a database password in my configuration. How can I ensure that the password does not appear in the output? Which parameter should I use?
+10. What is the difference between SLO (Service Level Objective) and SLA (Service Level Agreement)?
+11. What is the difference between PV (Persistent Volume) and PVC (Persistent Volume Claim)?
+12. Explain the Kubernetes architecture used in your project.
+13. Are you using stateful or stateless applications in your project?
+14. What is a StatefulSet in Kubernetes?
+15. Scenario-based questions related to PVC (Persistent Volume Claim) and PV (Persistent Volume).
+16. How is a Persistent Volume (PV) created in Kubernetes?
+17. What is a Persistent Volume (PV)?
+18. What is the difference between a Persistent Volume (PV) and a Persistent Volume Claim (PVC)?
+19. How do you map ports in a Dockerfile?
+20. If there is one port 80 and another port 8000, how do you map them in Docker?
+21. What are the different services in Kubernetes, and which services have you worked on?
+22. Which ingress controller are you using in your project?
+23. What is the difference between a rollback, a canary deployment, and a blue-green deployment in Kubernetes?
+24. Scenario-based questions related to deployments in Kubernetes.
+25. Let’s take a scenario: I am creating an EC2 instance and attaching it to a VPC. How can I ensure the VPC is created first and then the EC2 instance?
+26. How do you ensure that a VPC is created before an EC2 instance in AWS using Terraform?
+27. What is Ansible, and why do we use it?
+
+==================================================================================================================================================================
+Default Ports:
+
+In the world of DevOps and Networking, ports are essential for communication between services and servers. Each service or protocol uses a specific port to handle requests. Here are some commonly used default ports that every DevOps professional should know:
+
+Port 22 - SSH: For secure remote login and file transfers.
+Port 80 - HTTP: Standard port for unencrypted web traffic.
+Port 443 - HTTPS: Secure, encrypted web traffic.
+Port 3000 - Grafana: Used for monitoring and dashboards.
+Port 9090 - Prometheus: For collecting metrics and monitoring.
+Port 25 - SMTP: For sending emails.
+Port 53 - DNS: Resolves domain names to IP addresses.
+Port 3306 - MySQL: Default port for MySQL databases.
+Port 6379 - Redis: Fast in-memory data storage (caching).
+Port 5601 - Kibana: For visualizing data from Elasticsearch.
+Port 9100 - Node Exporter: Collects hardware and OS metrics for Prometheus.
+Port 3100 - Loki: Log aggregation system for storing and querying logs.
+Port 9200 - Elasticsearch: Used for full-text search and log analytics.
+Port 8080 - Tomcat: Default HTTP port for Apache Tomcat server.
+Port 5432 - PostgreSQL: Default port for PostgreSQL database connections.
+
+==================================================================================================================================================================
+🚀 Cloud & DevOps Interview Questions (Explained Simply!)
+
+🔹 Docker Basics
+1️⃣ What is Docker, and how does it work?
+
+Docker is a tool that packages your application and everything it needs (like libraries) into a container. These containers can run the same way on any system, ensuring your app works everywhere.
+
+2️⃣ How do containers differ from virtual machines?
+
+Containers: Lightweight, share the system’s OS, and start quickly.
+Virtual Machines: Heavier because they include their own OS, making them slower to start and use more resources.
+
+3️⃣ What is Docker Compose?
+
+It’s a tool to run apps with multiple containers (e.g., a web app with a database). You define everything in one file, and with a single command, Docker Compose sets up the entire environment for you.
+
+🔹 Kubernetes Concepts
+4️⃣ What is Kubernetes, and why is it used?
+
+Kubernetes (K8s) is like a manager for your containers. It handles where and how containers run, makes sure they restart if they fail, balances traffic, and even scales them up or down automatically.
+
+5️⃣ How do you deploy a Kubernetes cluster?
+
+You need tools like kubectl and a container runtime (e.g., Docker). Then, you create a cluster, add worker nodes, and deploy your application using YAML files.
+
+6️⃣ What are Kubernetes Pods?
+
+A pod is the smallest unit in Kubernetes. Think of it as a group that holds one or more containers that work together. They share the same network and storage.
+
+🔹 Advanced Kubernetes
+7️⃣ How do you manage Kubernetes secrets?
+
+Kubernetes Secrets store sensitive data like passwords securely. You create a secret, and your application accesses it without exposing it to the public.
+
+8️⃣ What are Kubernetes Ingress and Services?
+
+Service: Helps different parts of your app (or users) connect to your containers.
+Ingress: Handles HTTP/HTTPS traffic and routes it to the right container, like directing website visitors to the correct page.
+
+9️⃣ How do you monitor and scale a Kubernetes cluster?
+
+Monitor: Use tools like Prometheus and Grafana to check how your app and cluster are performing.
+Scale: Add more containers (pods) manually or automatically if the app gets busy.
+
+🔟 What is a service mesh in Kubernetes?
+A service mesh (e.g., Istio) makes communication between containers easy, secure, and manageable. It handles traffic control and encrypts data between services without needing to change your code.
+
+==================================================================================================================================================================
+- Free Resources:
+• Python - https://lnkd.in/dt_-2-Uj
+• AWS - https://lnkd.in/gJeUGfjS
+
+==================================================================================================================================================================
+Jenkins is outdated
+Maven is outdated
+Puppet is outdated
+Chef is outdated
+Nagios is outdated
+Docker Swarm is outdated
+
+Alternatives:
+GitLab & GitHub Actions for CI/CD
+Ansible for configuration management
+Terraform for IaC (Though I wish there were a better alternative!)
+Gradle (Faster builds compared to Maven & Ant)
+Red Hat OpenShift (Much better than Kubernetes)
+Grafana for monitoring dashboards
+Vector, Fluent Bit for high-performance log forwarding
+ELK or Loki for log storage
+Prometheus or Influxdb for metrics storage
+
+==================================================================================================================================================================
+If you want to learn DevOps then use these resources:
+- Devops blog: https://lnkd.in/g7WZMDBX
+- Devops projects: https://lnkd.in/g-Y2b3ck 	https://lnkd.in/grqBnb4b
+- Roadmap: https://lnkd.in/gkdgikvA
+==================================================================================================================================================================
+https://www.youtube.com/watch?v=9J44HhOVArc&pp=ygUfZGV2b3BzIGVuZ2luZWVyIGNvbXBsZXRlIGNvdXJzZQ%3D%3D
+
+In a world where Cloud and DevOps technologies evolve at lightning speed, it’s tempting to chase every new tool, platform, or framework.
+
+But no matter how fast technology moves, never skip the fundamentals.
+
+Mastering the basics — infrastructure, networking, automation principles, version control, security is what sets apart a true engineer from someone just following trends.
+
+Tools change. Fundamentals endure.
+==================================================================================================================================================================
+New DevOps Interview Q&A.
+
+1. /var partition is 90% full. What’s your immediate action?
+Answer:
+
+Check disk usage with du -sh /var/*
+
+Clear logs: /var/log (e.g., logrotate, delete old logs)
+
+Check for core dumps or large temp files
+
+Move non-critical data to another partition
+
+Consider extending the partition with LVM if necessary
+
+
+2. You’re locked out via SSH with no root access. How do you recover?
+Answer:
+
+Use cloud provider console (e.g., EC2 instance connect or AWS SSM Session Manager)
+
+Mount the volume on another instance and edit /etc/ssh/sshd_config or /etc/sudoers
+
+Reboot into single-user mode (for non-cloud VMs)
+
+
+3. Add 50GB to /opt using LVM without any downtime. What are the steps?
+Answer:
+
+Use lvextend -L +50G /dev/mapper/volume-opt
+
+Resize the filesystem (e.g., resize2fs or xfs_growfs /opt)
+
+Ensure volume group has enough space or extend it first
+
+
+4. Jenkins is failing to push a Docker image to the registry. How do you troubleshoot?
+Answer:
+
+Check credentials and access permissions
+
+Verify Docker daemon is running
+
+Check network connectivity to the registry
+
+Validate tag name and registry URL
+
+Inspect Jenkins logs and pipeline script
+
+
+5. EC2 instance is unreachable, and it’s not a security group issue. What’s your next step?
+Answer:
+
+Check instance status checks in AWS console
+
+Review system logs via EC2 console
+
+Inspect network ACLs, route table, or NACLs
+
+Use SSM Session Manager if enabled
+
+
+6. An S3 bucket was made public by mistake. How do you secure and audit it?
+Answer:
+
+Disable public access using bucket policy/block public access
+
+Use AWS Config and CloudTrail for auditing
+
+Enable S3 server access logging
+
+Set up an S3 Bucket Policy to deny all public access
+
+
+7. RDS migration with minimal downtime – how would you approach it?
+Answer:
+
+Use AWS DMS (Database Migration Service) with continuous replication
+
+Schedule switchover during low-traffic time
+
+Test migration on staging before production
+
+Enable multi-AZ for high availability
+
+
+8. CI/CD pipeline needs rollback capability. How would you implement it?
+Answer:
+
+Use versioned artifacts and rollback to previous version
+
+Maintain deployment history
+
+Integrate approval gates and health checks
+
+Use canary or blue/green deployment strategies
+
+
+9. Write a shell script that checks if a service is running, restarts it if not, and logs the event.
+Answer:
+
+#!/bin/bash
+SERVICE="nginx"
+if ! systemctl is-active --quiet $SERVICE; then
+ echo "$(date): $SERVICE is down. Restarting..." >> /var/log/service_monitor.log
+ systemctl restart $SERVICE
+else
+ echo "$(date): $SERVICE is running." >> /var/log/service_monitor.log
+fi
+
+
+10. Design a highly available backend on AWS – what services and architecture would you use?
+Answer:
+
+Use ELB (Load Balancer)
+
+Deploy EC2 instances in Auto Scaling Groups across multiple AZs
+
+Store data in RDS Multi-AZ or Aurora
+
+Use S3 for object storage
+
+Use CloudFront and Route 53 for distribution and DNS
+
+Consider ECS or EKS for container orchestration
+
+==================================================================================================================================================================
+The list of questions asked in an actual DevOps / Cloud / SRE interview
+
+1. Explain about yourself.
+2. 3. 4. Which flavour of Linux you know? Which flavours have you worked.
+Which version of RHEL , have you worked?
+How do you locate a file name having a string? How do you do this from root directory?
+Locate it from sub directory as well.
+5. How to search a string within a file? From all the sub directory file as well?
+6. Systemd and system init diﬀerence or correlation.
+7. How to check all serives were up after a system boot?
+8. If any services didn’t start, how to troubleshoot?
+9. On Aws EC2, how to check applications came up?
+10. On AWS, how do you check logs?
+11. Where do you configure min and maximum pod?
+12. How do you check how many pods were started?
+13. What are life cycles of a pod?
+14. If any pods were failing to start, how do you start troubleshooting?
+15. What are ways database can be installed in aws?
+16. Explain on load Balancer in AWS?
+17. Explain security groups and NACLs.
+18. With example, explain application load balancing and network load balancing.
+19. Explain, how do min and max pod configuration In load balancing?
+20. How does a kubernetes know when to spin up an additional pod? Give the configuration
+Details.
+21. Explain about cluster in kubernetes.
+22. In order to host an enterprise application, what are all things you would consider
+23. Ingress and egress configuration. Explain in detail. How would you configure it.
+24. How would you configure routing of application to accept ingress.
+25. How do you handle database creeds in eks or k8?
+26. Explain about secrets and configMap
+27. How the configMap is used within application
+28. How do you secure transport layer security
+29. Across zone load balancing - explain the concept and provide details on how will you
+configure
+30. In aws load balancing, what’s the use of sticky session?
+1. How do you check CPU status, and what is the expected output when you run that command?
+2. How do you check the status of a previously running process in your VM?
+3. What is the use of Docker Swarm?
+4. How do you log in to an EKS cluster?
+5. How do you configure monitoring for your cluster?
+6. How do you patch your host without causing downtime?
+7. How do you change the instance type of your EKS cluster?
+8. Which protocol does Ansible work on?
+9. What is an Ansible playbook?
+10. What are your roles and responsibilities as a DevOps engineer?
+
+==================================================================================================================================================================
