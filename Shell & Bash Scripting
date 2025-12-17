@@ -1,0 +1,255 @@
+Bash → blog.sysxplore.com
+
+Interviewer: Imagine you are tasked with creating a shell script for a system monitoring tool. The objective is to continuously monitor all processes on a Unix/Linux system. If any process exceeds 60% CPU usage, the script should log information about those processes into a file, and simultaneously send an email notification to a specified email address. 
+
+#!/bin/bash
+
+# File to store information about processes exceeding 60% CPU usage
+output_file="process_monitor.log"
+# Email address to receive notifications
+email_address="your_email@example.com"
+
+while true; do
+ # Get the list of processes sorted by CPU usage in descending order
+ processes=$(ps aux --sort=-%cpu | awk '{if ($3 > 60) print}')
+
+ # Check if there are any processes exceeding 60% CPU usage
+ if [ -n "$processes" ]; then
+ # Get the current date and time
+ current_datetime=$(date +"%Y-%m-%d %H:%M:%S")
+
+ # Write information about the processes to the output file
+ echo "Processes exceeding 60% CPU usage at $current_datetime:" >> "$output_file"
+ echo "$processes" >> "$output_file"
+ echo "----------------------------------------" >> "$output_file"
+
+ # Send an email notification
+ echo -e "Subject: High CPU Usage Alert\n\nProcesses exceeding 60% CPU usage:\n\n$processes" | mail -s "High CPU Usage Alert" "$email_address"
+ fi
+
+ # Sleep for 1 minute before checking again
+ sleep 60
+done
+
+==================================================================================================================================================================
+Write a shell script to check the the status of a process on a Google Compute Engine virtual machine and restarts it if the status is failed:
+
+#!/bin/bash
+
+# Define the process name
+PROCESS_NAME="your_process_name"
+
+# Check if the process is running
+if pgrep -x "$PROCESS_NAME" > /dev/null
+then
+ echo "Process $PROCESS_NAME is running."
+else
+ echo "Process $PROCESS_NAME is not running. Restarting..."
+
+ # Restart the process (replace the command with your actual restart command)
+ systemctl restart $PROCESS_NAME
+
+ echo "Process restarted."
+fi
+
+Make sure to replace “your_process_name” with the actual name or identifier of your process. Additionally, replace the restart command with the appropriate command used to restart your process.
+
+Save this script to a file (e.g., monitor_process.sh), make it executable (chmod +x monitor_process.sh), and you can schedule it to run periodically using tools like cron.
+
+==================================================================================================================================================================
+Interviewer: Write a shell Script to create AWS IAM user, you need to prompt the username and pwd while executing the script. 
+
+#!/bin/bash
+
+# Prompt for AWS access key and secret key
+read -p "Enter your AWS Access Key ID: " aws_access_key
+read -p "Enter your AWS Secret Access Key: " aws_secret_key
+
+# Set AWS credentials
+aws configure set aws_access_key_id "$aws_access_key"
+aws configure set aws_secret_access_key "$aws_secret_key"
+
+# Prompt for IAM user details
+read -p "Enter IAM username: " iam_username
+read -p "Enter IAM user password: " iam_password
+
+# Create IAM user
+aws iam create-user --user-name "$iam_username"
+
+# Create IAM login profile with a password
+aws iam create-login-profile --user-name "$iam_username" --password "$iam_password" --password-reset-required
+
+# Output success message
+echo "IAM user $iam_username created successfully with a password."
+
+Explanation:
+
+First we need to set the required ACCESS & Secret key with proper policy to create IAM users, Then we can create a IAM user.
+
+==================================================================================================================================================================
+Interviewer: In linux, I have an apache error log file. Whenever I am getting word "error" in error.log file. I should receive an email. How to achieve this?
+
+Step 1: 
+Look for the ErrorLog directive and set it to the desired log file path. 
+
+For example:
+/var/log/apache2/error.log
+ 
+Step 2:
+Configure email notifications using mailx
+
+Step 3: Script 
+
+#!/bin/bash
+if grep -q "error" /var/log/apache2/error.log; then
+ echo "Apache error detected in error log." | sendmail user1@gmail.com
+fi
+
+Step 4: Set Up Cron Job:
+crontab -e
+
+Then, add an entry to run your script at the desired interval. For example, to check every minute, you can add:
+* * * * * /usr/local/bin/monitor.sh
+
+Now, your script will monitor the Apache error log for the specified keyword (e.g., "error") and send you an email notification whenever it detects an error entry in the log.
+
+==================================================================================================================================================================
+Interviewer: Write a shell script to create a random password of a specified length of 16.
+
+#!/bin/bash
+PASSWORD_LENGTH=16
+PASSWORD=$(openssl rand -base64 48 | tr -d /=+ | cut -c1-$PASSWORD_LENGTH)
+echo "Random Password: $PASSWORD"
+
+==================================================================================================================================================================
+Shell Scripting for DevOps
+
+Shell scripting is a cornerstone of automation in Linux/Unix environments, making it indispensable for DevOps professionals. It empowers teams to streamline the development and deployment of applications, ensuring consistency, efficiency, and reliability across the board.
+
+Benefits of Shell Scripting
+Automate Repetitive Tasks:- Save valuable time and improve operational efficiency by automating routine tasks.
+
+Streamline Development & Deployment:- Ensure smooth, consistent processes from development to production, reducing the risk of errors.
+
+Enhance Reliability:- Achieve consistent deployments, reducing variability and increasing system stability.
+
+Boost Security:- Implement scripts to automate security tasks, strengthening your system's defenses.
+
+Simplify Troubleshooting:- Make problem-solving more straightforward with automated diagnostics and error handling.
+ 
+Let's understand #!/bin/bash
+The #!/bin/bash line, known as the shebang, first line in a shell script. It instructs the operating system to use the Bash shell to interpret the script, ensuring your commands are executed correctly.
+
+Ex: #!/bin/bash 
+	#This script prints "Hello World" 
+	
+	echo "Hello World"
+
+Output: Hello World
+
+==================================================================================================================================================================
+Bash script designed to monitor disk usage and automate log management:  
+A script that discreetly monitors disk space usage across a list of specified servers. The script connects to each server via SSH (with exchanged SSH keys required for authentication), checks the disk space used on the root (/) partition, and compares it against a predefined threshold (90%). If usage exceeds this threshold, it sends an email alert to a specified recipient using mailx. 
+
+It contains a simple error handling to check if the SSH command succeeded before proceeding with disk space evaluation. 
+
+To ensure regular monitoring, you can create a cron job that redirects both standard output (stdout) and standard error (stderr) to the same log file (e.g., script.sh > /path/to/logfile.log 2>&1). 
+
+#!/bin/bash
+USER="user"
+TIMESTAMP=$(date +%Y%m%d %H%M%S)
+EMAIL RECIPIENT="user@company.com"
+DISK_PERCENTAGE=90
+SERVERS=(
+"server1"
+)
+"server2"
+"server3"
+echo "$TIMESTAMP"
+✓ for SERVER in "${SERVERS[@]}"; do
+SSH_CMD="ssh -i /home/user/.ssh/id_rsa_ops $USER@$SERVER"
+DISK_SPACE=$($SSH_CMD "df -h/ | awk 'NR==2 {print \$5} | sed 's/%//*")
+if [ $? -ne 0 ]; then
+fi
+echo "Error: Failed to retrieve disk space for $SERVER"
+continue
+echo "${SERVER}: $DISK_SPACE % used"
+if [ "$DISK_SPACE" -ge "$DISK_PERCENTAGE" ]; then
+else
+fi
+done
+EMAIL USER=${EMAIL_RECIPIENT%%@*}
+EMAIL SUBJECT="${SERVER}: server disk space on equal or more than ${DISK_PERCENTAGE}% alert"
+EMAIL_BODY="Alert: The ${SERVER} server has ${DISK_SPACE}% disk space on /, exceeding the threshold of ${DISK_PERCENTAGE} %."
+{
+echo "Hi, ${EMAIL_USER}."
+echo ""
+echo "${EMAIL_BODY}"
+echo ""
+echo "Thank you."
+}mailx-s "$EMAIL SUBJECT" "$EMAIL_RECIPIENT"
+echo "Warning email sent to $EMAIL_RECIPIENT for $SERVER with $DISK_SPACE % disk space on /."
+echo ""
+echo "Server $SERVER disk space on is $DISK_SPACE %, not exceeding the threshold of $DISK_PERCENTAGE%."
+echo ""
+fi
+done
+
+==================================================================================================================================================================
+🔥 Bash scripting Scenario Based Interview Questions 🔥
+
+1. Scenario: Automated Backup Script 💡
+
+• Question: You need to create a script that backs up a directory to a remote server daily. How would you write a script to handle this task, including error checking and logging?
+• Concepts Covered: Scheduling with `cron`, remote file transfer (e.g., `rsync`, `scp`), logging, error handling.
+
+2. Scenario: Handling Large Files 💡
+
+• Question: You have a large log file that you need to process and extract specific entries from. How would you write a script to filter and process this file efficiently?
+• Concepts Covered: File handling, `grep`, `awk`, `sed`, performance considerations.
+
+3. Scenario: User Input Validation💡
+
+• Question: You are writing a script that takes user input for creating a new user account. How would you validate the input to ensure it meets certain criteria (e.g., username length, password strength)?
+• Concepts Covered: Input validation, string manipulation, conditional statements.
+
+4. Scenario: Disk Space Monitoring💡
+
+• Question: Write a script that monitors disk space usage and sends an alert if usage exceeds a specified threshold. How would you implement this?
+• Concepts Covered: Disk space commands (`df`, `du`), threshold checking, notifications (e.g., email, `mail` command).
+
+5. Scenario: Service Health Check💡
+
+• Question: You need to create a script that checks the health of a web service by sending an HTTP request and verifying the response. How would you write this script and handle different HTTP status codes?
+• Concepts Covered: HTTP requests (`curl`, `wget`), response handling, status code checking.
+
+6. Scenario: Script Debugging💡
+
+• Question: You have a script that is failing intermittently, and you need to troubleshoot it. How would you go about debugging this script to find and fix the issue?
+• Concepts Covered: Debugging techniques (`set -x`, `set -v`), error logging, tracing.
+
+7. Scenario: Automated Deployment💡
+
+• Question: Write a script that automates the deployment of an application by stopping the current service, updating the application files, and restarting the service. How would you ensure the deployment is performed safely?
+• Concepts Covered: Service management (`systemctl`, `service`), file operations, error handling.
+
+8. Scenario: Log Rotation💡
+
+• Question: Your application generates large log files that need to be rotated and compressed regularly. How would you write a script to handle log rotation and cleanup old log files?
+• Concepts Covered: Log rotation, file compression (`gzip`, `bzip2`), file cleanup.
+
+==================================================================================================================================================================
+eg:
+#!/bin/bash
+echo "===== Server Health Check ====="
+echo "Date: $(date)"
+echo "Hostname: $(hostname)"
+echo "Uptime: $(uptime -p)"
+echo "CPU Load: $(uptime | awk -F'load average:' '{ print $2 }')"
+echo "Memory Usage:"
+free -h
+echo "Disk Usage:"
+df -h / | tail -1
+
+==================================================================================================================================================================
+
