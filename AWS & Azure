@@ -1,0 +1,539 @@
+AWS → explore.skillbuilder.aws
+Azure → learn.microsoft.com
+
+List of Important services of AWS for DevOps Engineers: 
+------------------------------------------------------
+1. Amazon EC2 (Elastic Compute Cloud): Provides scalable computing capacity.
+
+2. Amazon S3 (Simple Storage Service): Scalable storage for data backup and distribution.
+
+3. AWS Lambda: Allows running code without provisioning or managing servers.
+
+4. AWS CodePipeline: Automates the build, test, and deploy phases of your release process.
+
+5. AWS CodeBuild: A fully managed build service that compiles source code, runs tests, and produces software packages.
+
+6. AWS CodeDeploy: Automates code deployments to any instance, including Amazon EC2 and on-premises servers.
+
+7. AWS CodeCommit: A source control service that hosts secure Git-based repositories.
+
+8. Amazon RDS (Relational Database Service): Makes it easy to set up, operate, and scale a relational database.
+
+9. Amazon ECS (Elastic Container Service): Orchestration service for Docker containers.
+
+10. Amazon EKS (Elastic Kubernetes Service): Managed Kubernetes service.
+
+11. AWS CloudFormation: Allows you to model and set up your Amazon Web Services resources so that you can spend less time managing those resources and more time focusing on your applications.
+
+12. AWS CloudWatch: Monitoring and observability service for AWS resources and the applications you run on AWS.
+
+13. AWS CloudTrail: Enables governance, compliance, and operational and risk auditing of your AWS account.
+
+14. AWS Elastic Beanstalk: An easy-to-use service for deploying and scaling web applications and services.
+
+15. Amazon ECR (Elastic Container Registry): A fully managed Docker container registry.
+
+16. AWS IAM (Identity and Access Management): Manages access to AWS services and resources securely.
+
+=================================================================================================================================================================
+Networking Services in Microsoft Azure Cloud:
+
+Key Networking Services in Azure;
+
+1. For Domain Naming Service:
+- Azure DNS : Scalable & highly available Domain Name System (DNS) service
+
+2. For establishing the network setup in Azure:
+- Azure Virtual Network : logically isolated & dedicated virtual network within the Azure. Supports IPv4 & IPv6
+# Subnet – A subpart of network-Public or Private
+# Route Table – used to direct traffic with a set of rules
+# IP Addresses
+
+3. Gateway Services 
+ - Azure VPN Gateway : allows encrypted traffic for VNet to VNet or VNet to on-prem
+ - Azure ExpressRoute Gateway : dedicated/secure fiber based high-bandwidth
+
+4. Setup Connectivity between Onprem and Azure or within Azure: 
+# Azure Bastion : Private & fully managed RDP and SSH access to VMs
+# Azure Private Link : Private access to services hosted on Microsoft network
+# Virtual Network service endpoints : connectivity to Azure services over MS backbone
+
+5. Connect Private Subnets to Internet:
+- Virtual Network NAT : allows connectivity to Internet
+- Virtual Network Peering : connecting resources across different Azure virtual networks.
+
+6. Network Security : 
+# Azure Firewall: Native firewalling capabilities
+# Azure Firewall Manager: Central network security policy and route mgmt
+# Web Application Firewall : provides powerful protection for web apps
+# Azure DDoS Protection
+
+7. Elastic Load Balancing : for High availability & Load Balancing
+# Application Gateway - Supports SSL termination, URL routing, Session Affinity, Redirection, WAF etc..L7 LB
+# Azure Load Balancer : L4 LB
+# Traffic Manager : Route incoming traffic for high performance and availability
+
+8. Use Content Delivery Network(CDN) Services for users across Globe: 
+- Azure CDN : Delivers high-bandwidth content to customers globally
+- Accelerated Networking : Equivalent to AWS Global Accelerator
+- Azure Frontdoor : cloud CDN with intelligent threat protection
+
+9. Few Other Network based Services : 
+- Virtual WAN :Optimize and automate branch to branch connectivity
+- Azure Service Fabric : package, deploy, and manage microservices and containers
+- Azure Internet Analyzer
+
+For Monitoring : 
+- Through Azure Monitor Metrics
+- Network Watcher : Network performance monitoring and diagnostics
+
+Network Access Control : 
+- Network Security Group : combines the functions of the AWS SGs and NACLs.
+
+=================================================================================================================================================================
+✔Amazon EC2: The backbone of many applications, EC2 provides scalable compute capacity. It's essential for running everything from web servers to big data analytics.
+
+✔Amazon S3: This object storage service is known for its durability, scalability, and security. It's a go-to solution for data storage, backups, and even static website hosting.
+
+✔Amazon RDS: Managing databases can be complex, but RDS simplifies the process by automating routine tasks like backups and patching. It's perfect for relational database workloads.
+
+✔AWS Lambda: Serverless computing is revolutionizing the way we build and deploy applications. With Lambda, you can run code without provisioning or managing servers, paying only for the compute time you consume.
+
+✔Amazon VPC: Networking is the cornerstone of any AWS deployment. VPC allows you to create a logically isolated network that you can customize, ensuring secure and scalable connectivity.
+
+=================================================================================================================================================================
+AWS offers an extended collection of services catering to different functionality and use cases. Below's summary of some of the main AWS services:
+
+🔶 Compute: 
+Amazon EC2 (Elastic Compute Cloud): Scalable virtual servers for running any application.
+AWS Lambda: Serverless computing, allowing code execution without managing servers.
+Amazon Lightsail: Simplified virtual servers for basic needs.
+AWS Elastic Beanstalk: Effortless deployment and scaling of web applications.
+
+🔶 Storage:
+Cloud storage that scales with Amazon S3.
+Amazon EBS: EC2 instance block storage volumes.
+Amazon Glacier: Economical, extended-duration storage.
+
+🔶 Database: 
+Managed relational database service provided by Amazon RDS.
+The managed NoSQL database service is offered by Amazon DynamoDB.
+Scalable, rapid data warehousing offered by Amazon Redshift.
+Amazon Aurora: Managed relational database with high performance.
+
+🔶 Networking & Content Delivery:
+Amazon VPC: Private cloud infrastructure.
+Amazon CloudFront: A worldwide network for content delivery (CDN).
+AWS Direct Connect: A network connection that is dedicated
+
+🔶 Tools for developers:
+Amazon CodeCommit: A service for managed source control.
+AWS CodeBuild: Construct and evaluate code.
+Automated code deployments using AWS CodeDeploy.
+
+🔶 Identity, Security, and Compliance: 
+AWS IAM: Controls encryption keys and user access.
+User identification and data synchronization using Amazon Cognito.
+Amazon KMS: Handles keys for encryption.
+
+🔶 Machine Learning: 
+Create, train, and implement ML models using Amazon SageMaker.
+AWS DeepLens: A video camera with deep learning capabilities.
+Amazon Rekognition: Video and image processing.
+
+=================================================================================================================================================================
+AWS RealtimeTroubleshooting: 
+
+1. EC2: Instance Unreachable
+o Symptoms: Unable to connect to an EC2 instance.
+o Resolution: Check security group rules and Network ACLs to ensure correct inbound 
+and outbound traffic. Verify the instance state and system logs for any issues. Update 
+security groups if necessary.
+
+2. Auto Scaling: Scaling Issues
+o Symptoms: Auto Scaling fails to launch or terminate instances.
+o Resolution: Review Auto Scaling group configuration, launch configurations, and 
+health checks. Check instance termination protection settings. Investigate 
+CloudWatch alarms for triggers and adjust policies accordingly.
+
+3. Load Balancer: Unhealthy Instances
+o Symptoms: Load balancer reports instances as unhealthy.
+o Resolution: Inspect CloudWatch metrics for instances, troubleshoot application 
+health checks, and ensure instances are registered with the correct load balancer. 
+Check security group settings and troubleshoot application health.
+
+4. Route 53: DNS Resolution Issues
+o Symptoms: Domain not resolving or pointing to the wrong IP address.
+o Resolution: Verify Route 53 records for accuracy. Check DNS propagation and TTL 
+settings. Confirm the health of associated resources (e.g., Load Balancer, EC2 
+instances). Investigate any issues reported in Route 53 health checks.
+
+5. CloudWatch: Alarm Triggering Incorrectly
+o Symptoms: CloudWatch alarms triggering when they shouldn’t or not triggering 
+when expected.
+o Resolution: Review alarm configurations, thresholds, and evaluation periods. Check 
+associated metrics for accuracy. Verify the underlying issue causing the alarm 
+condition.
+
+6. SSL: Certificate Expiry
+o Symptoms: SSL certificate expired or causing browser warnings.
+o Resolution: Renew or replace the SSL certificate. Update the certificate in the 
+associated AWS services (e.g., Load Balancer, CloudFront). Monitor certificate expiry 
+using AWS Certificate Manager (ACM) or other tools.
+
+7. Cloud Front: Content Not Updating
+o Symptoms: Changes in the origin not reflected in CloudFront distribution.
+o Resolution: Invalidate CloudFront cache for updated content. Check CloudFront 
+distribution settings, origin configurations, and TTL settings. Ensure that the origin is 
+serving the latest content.
+
+=================================================================================================================================================================
+AWS offers over 200 services, but mastering the 13 will cover 90% of use cases and lets you be more productive.
+
+• S3: data storage
+• DynamoDB, RDS: scalable, high-performance database
+• Lambda: serverless compute
+• Cognito: user management
+• API Gateway: API management
+• Eventbridge: collect & distribute domain events
+• SQS: queue tasks to process asynchronously
+• SNS: send notifications to endpoints (HTTP) and users (email)
+• IAM: access control
+• CloudFormation: infrastructure as code
+• CloudWatch
+• System Manager
+• EC2
+
+Azure Devops, 
+virtual machines, 
+storage accounts, 
+entra, Cosmosdb, 
+logic apps, 
+functions, 
+data factory, 
+api management
+
+=================================================================================================================================================================
+🛡️ Security Groups:
+Instance-Level: Controls inbound/outbound traffic to EC2 instances.
+Stateful: Automatically allows response traffic.
+Allow Rules Only: If it's not allowed, it's blocked by default.
+Example: Allow HTTP traffic (port 80) to a web server, keeping other ports secure.
+
+🔒 Network ACLs:
+Subnet-Level: Manages traffic at the subnet level.
+Stateless: Requires explicit rules for both inbound and outbound traffic.
+Allow & Deny Rules: Provides more granular control.
+Example: Block all but specific IP addresses from accessing a private subnet.
+Together, they form a strong, multi-layered security setup. 🌐🔐
+
+=================================================================================================================================================================
+➡️ 𝐀𝐦𝐚𝐳𝐨𝐧 𝐄𝐂2:
+
+🟢 What is the difference between EC2 and traditional virtualization?
+🟢 Explain the concept of Elastic Load Balancing and how it works with EC2 instances.
+🟢 How can you encrypt EBS volumes?
+🟢 What is Amazon EC2 Container Service, and how does it work?
+🟢 How do you create a custom AMI, and when would you need to do so?
+🟢 Explain the concept of EC2 instance metadata.
+🟢 How can you deploy a multi-tier architecture on EC2 instances?
+🟢 What is an EC2 Placement Group, and when would you use it?
+🟢 How can you automate EC2 instance launches using AWS CLI or SDKs?
+🟢 Explain the differences between horizontal and vertical scaling in the context of EC2.
+🟢 How do you troubleshoot an unresponsive EC2 instance?
+
+➡️ 𝐀𝐖𝐒 𝐋𝐚𝐦𝐛𝐝𝐚:
+
+🟢 What is the maximum execution time for a Lambda function, and how can you extend it?
+🟢 Explain the concept of Cold Start in AWS Lambda and how to mitigate it.
+🟢 How does AWS Lambda handle asynchronous event processing?
+🟢 What is the AWS Lambda Execution Environment?
+🟢 Explain the concept of Dead Letter Queues in AWS Lambda.
+🟢 How can you share code between multiple Lambda functions?
+🟢 What are the considerations for securing environment variables in Lambda functions?
+🟢 How can you integrate AWS Lambda with other AWS services?
+🟢 What is the difference between Provisioned Concurrency and On-demand Concurrency in Lambda?
+🟢 Explain the limitations of AWS Lambda.
+
+➡️ 𝐀𝐦𝐚𝐳𝐨𝐧 𝐒3:
+
+🟢 What is the maximum size of an S3 object, and how can you store larger files?
+🟢 Explain the concept of eventual consistency in S3.
+🟢 How does S3 handle versioning conflicts?
+🟢 What is the difference between S3 Transfer Acceleration and Direct Connect?
+🟢 How can you enable Cross-Origin Resource Sharing (CORS) for an S3 bucket?
+🟢 What is the significance of the S3 Inventory feature?
+🟢 Explain the use cases for S3 Transfer Acceleration.
+🟢 How can you enforce encryption for data at rest in an S3 bucket?
+🟢 What is the AWS Snowball service, and when would you use it for data transfer?
+🟢 How do you implement data lifecycle policies in S3?
+
+➡️ 𝐀𝐦𝐚𝐳𝐨𝐧 𝐃𝐲𝐧𝐚𝐦𝐨𝐃𝐁:
+
+🟢 Explain the differences between DynamoDB and Apache Cassandra.
+🟢 What is the difference between DynamoDB Local and the actual DynamoDB service?
+🟢 How can you implement fine-grained access control for DynamoDB tables?
+🟢 Explain the concept of adaptive capacity in DynamoDB.
+🟢 What is the importance of partition key design in DynamoDB?
+🟢 How do you handle hot partitions in DynamoDB?
+🟢 Explain the differences between DynamoDB Streams and Cross-Region Replication.
+🟢 What is the difference between a scan and query operation in DynamoDB?
+🟢 How do you implement global secondary indexes in DynamoDB?
+🟢 What is DAX (DynamoDB Accelerator), and how does it improve DynamoDB performance?
+
+=================================================================================================================================================================
+🛠 Essential AWS CLI Commands for DevOps Engineers 🛠
+
+📌 Setup and Configuration:
+# Install AWS CLI
+pip install awscli
+
+# Configure AWS CLI
+aws configure
+
+📌 IAM:
+# List IAM users
+aws iam list-users
+
+# Create IAM user
+aws iam create-user --user-name <username>
+
+# Attach policy to IAM user
+aws iam attach-user-policy --user-name <username> --policy-arn arn:aws:iam::aws:policy/<policy-name>
+
+📌 EC2:
+# List all EC2 instances
+aws ec2 describe-instances
+
+# Start an EC2 instance
+aws ec2 start-instances --instance-ids <instance-id>
+
+# Stop an EC2 instance
+aws ec2 stop-instances --instance-ids <instance-id>
+
+📌 S3:
+# List all S3 buckets
+aws s3 ls
+
+# Upload file to S3 bucket
+aws s3 cp <file-path> s3://<bucket-name>/<file-key>
+
+# Download file from S3 bucket
+aws s3 cp s3://<bucket-name>/<file-key> <file-path>
+
+📌 RDS:
+# List RDS instances
+aws rds describe-db-instances
+
+# Start RDS instance
+aws rds start-db-instance --db-instance-identifier <instance-id>
+
+# Stop RDS instance
+aws rds stop-db-instance --db-instance-identifier <instance-id>
+
+📌 CloudWatch:
+# List CloudWatch log groups
+aws logs describe-log-groups
+
+# Create CloudWatch log group
+aws logs create-log-group --log-group-name <log-group-name>
+
+📌 Elastic Beanstalk:
+# List Elastic Beanstalk environments
+aws elasticbeanstalk describe-environments
+
+# Update environment to new version
+aws elasticbeanstalk update-environment --environment-name <env-name> --version-label <version-label>
+
+📌 CloudFormation:
+# List CloudFormation stacks
+aws cloudformation describe-stacks
+
+# Create CloudFormation stack
+aws cloudformation create-stack --stack-name <stack-name> --template-body file://<template-file>
+
+# Update CloudFormation stack
+aws cloudformation update-stack --stack-name <stack-name> --template-body file://<template-file>
+=================================================================================================================================================================
+𝟮𝟬 𝗜𝗻𝘁𝗲𝗿𝘃𝗶𝗲𝘄 𝗾𝘂𝗲𝘀𝘁𝗶𝗼𝗻𝘀 𝗳𝗼𝗿 𝗔𝗪𝗦 𝗖𝗹𝗼𝘂𝗱 𝗘𝗻𝗴𝗶𝗻𝗲𝗲𝗿 𝗥𝗼𝗹𝗲
+
+1. What is AWS, and what are its main services?
+2. Explain the differences between EC2 and Lambda.
+3. How would you design a scalable and fault-tolerant architecture on AWS?
+4. What is the significance of the AWS VPC, and how do you set one up?
+5. Describe the different types of EC2 instances and their use cases.
+6. How do you secure data in transit and at rest in AWS?
+7. What is AWS S3, and how does its storage class work?
+8. How would you set up an Auto Scaling group in AWS?
+9. Explain the concept of IAM roles and policies in AWS.
+10. What is CloudFormation, and how does it help in infrastructure automation?
+11. How do you manage and monitor resources in AWS?
+12. What is the difference between RDS and DynamoDB?
+13. How would you implement a CI/CD pipeline using AWS services?
+14. Explain the concept of serverless architecture in AWS.
+15. What is Route 53, and how is it used for DNS management?
+16. Describe the process of migrating an on-premises application to AWS.
+17. How do you troubleshoot networking issues in AWS?
+18. What is AWS CloudTrail, and how is it different from CloudWatch?
+19. How do you optimize costs while using AWS services?
+20. Explain the concept of multi-AZ deployment and its benefits.
+
+=================================================================================================================================================================
+What are the differences between ECS and EKS ?
+
+Amazon ECS (Elastic Container Service) and Amazon EKS (Elastic Kubernetes Service) are both container orchestration services provided by AWS, but they differ significantly in their architecture, usage, and underlying technologies.
+
+*ECS Easier to use for users who are already familiar with AWS and do not require Kubernetes-specific features.
+
+*In EKS AWS manages the Kubernetes control plane (including etcd and API servers), but users have more control over the configuration and operation of their Kubernetes clusters. 
+
+*ECS uses AWS-specific networking modes like bridge, host, and aws vpc.
+
+*EKS utilizes Kubernetes networking models, allowing the use of Kubernetes-native networking plugins (CNI) like Calico or Weave
+
+*ECS tightly integrated with AWS services like IAM, CloudWatch, Auto Scaling, ALB/NLB, and more. 
+
+*EKS Also integrates well with AWS services, but the setup may require additional steps due to Kubernetes' flexibility. 
+
+*ECS Best suited for users who need a straightforward, AWS-integrated container orchestration solution. Ideal for single-cloud applications running entirely on AWS.
+
+*EKS Best for users who want to use Kubernetes' advanced features, run hybrid or multi-cloud applications, or migrate existing Kubernetes workloads to AWS.
+
+*ECS offers scalable and automated solutions via service auto-scaling, and cluster auto-scaling. AWS Fargate can be used for serverless container deployments, removing the need to manage EC2 instances.
+
+*EKS Kubernetes’ horizontal pod autoscaling (HPA) and cluster autoscaling can be used for scalability. EKS also supports Fargate for serverless Kubernetes deployments.
+
+*ECS has a smaller ecosystem compared to Kubernetes but benefits from strong AWS support and documentation.
+
+*Kubernetes has a large, active open-source community with a vast ecosystem of tools, plugins, and extensions.
+
+=================================================================================================================================================================
+EC2:
+Amazon Elastic Compute Cloud (EC2) is a web service provided by Amazon Web Services (AWS) that allows users to rent virtual servers, known as instances, to run applications in the cloud. EC2 provides scalable computing capacity, which means you can increase or decrease the number of instances based on your workload needs.
+
+Instance types: 
+Current generation instances
+
+1. General purpose: M5 | M5a | M5ad | M5d | M5dn | M5n | M5zn | M6a | M6g | M6gd | M6i | M6id | M6idn | M6in | M7a | M7g | M7gd | M7i | M7i-flex | Mac1 | Mac2 | Mac2-m1ultra | Mac2-m2 | Mac2-m2pro | T2 | T3 | T3a | T4g
+
+2. Compute optimized: C5 | C5a | C5ad | C5d | C5n | C6a | C6g | C6gd | C6gn | C6i | C6id | C6in | C7a | C7g | C7gd | C7gn | C7i | C7i-flex
+
+3. Memory optimized: R5 | R5a | R5ad | R5b | R5d | R5dn | R5n | R6a | R6g | R6gd | R6i | R6idn | R6in | R6id | R7a | R7g | R7gd | R7i | R7iz | R8g | U-3tb1 | U-6tb1 | U-9tb1 | U-12tb1 | U-18tb1 | U-24tb1 | U7i-12tb | U7in-16tb | U7in-24tb | U7in-32tb | X1 | X2gd | X2idn | X2iedn | X2iezn | X1e | z1d
+
+4. Storage optimized: D2 | D3 | D3en | H1 | I3 | I3en | I4g | I4i | Im4gn | Is4gen
+
+5. Accelerated computing: DL1 | DL2q | F1 | G4ad | G4dn | G5 | G5g | G6 | G6e | Gr6 | Inf1 | Inf2 | P2 | P3 | P3dn | P4d | P4de | P5 | Trn1 | Trn1n | VT1
+
+6. High-performance computing: Hpc6a | Hpc6id | Hpc7a | Hpc7g
+
+Previous generation instances: -
+
+1. General purpose: A1 | M1 | M2 | M3 | M4 | T1
+2. Compute optimized: C1 | C3 | C4
+3. Memory optimized: R3 | R4
+4. Storage optimized: I2
+5. Accelerated computing: G3
+
+===================================================================================================================================================================
+Migrate an e-shop to AWS for scalability and low cost: 
+Assess & Plan 📝: Analyze current setup to plan a cost-effective migration.
+Select AWS Services 💲: Use EC2 Spot Instances, RDS, S3, and CloudFront for scalable, cost-effective solutions.
+VPC Setup 🔒: Create a secure VPC, scaling resources as needed.
+Database & Storage 📦: Use Aurora Serverless and S3 with lifecycle policies for cost savings.
+Auto Scaling & Load Balancing ⚖️: Implement Auto Scaling groups and ELB to manage traffic efficiently.
+Monitor & Optimize 📊: Use CloudWatch and Cost Explorer to monitor usage and optimize costs.
+Key Takeaway: Effective use of AWS can ensure scalability while keeping costs in check.
+
+===================================================================================================================================================================
+three time-saving AWS CLI tricks every cloud engineer should know:
+
+𝟭. 𝗮𝘄𝘀 𝘀𝘁𝘀 𝗴𝗲𝘁-𝗰𝗮𝗹𝗹𝗲𝗿-𝗶𝗱𝗲𝗻𝘁𝗶𝘁𝘆
+ This command is your compass in the AWS account landscape. It instantly tells you which account and IAM user/role you're currently using. No more deploying to the wrong account or scratching your head over permission issues.
+
+𝟮. 𝗮𝘄𝘀 𝗲𝗰𝟮 𝗱𝗲𝘀𝗰𝗿𝗶𝗯𝗲-𝗶𝗻𝘀𝘁𝗮𝗻𝗰𝗲𝘀 --𝗾𝘂𝗲𝗿𝘆 '𝗥𝗲𝘀𝗲𝗿𝘃𝗮𝘁𝗶𝗼𝗻𝘀[*].𝗜𝗻𝘀𝘁𝗮𝗻𝗰𝗲𝘀[*].[𝗜𝗻𝘀𝘁𝗮𝗻𝗰𝗲𝗜𝗱,𝗦𝘁𝗮𝘁𝗲.𝗡𝗮𝗺𝗲,𝗧𝗮𝗴𝘀[?𝗞𝗲𝘆==`𝗡𝗮𝗺𝗲`].𝗩𝗮𝗹𝘂𝗲|[𝟬]]' --𝗼𝘂𝘁𝗽𝘂𝘁 𝘁𝗮𝗯𝗹𝗲
+ This one-liner gives you a clean, tabulated view of your EC2 instances, their states, and names. It's like x-ray vision for your compute resources, helping you quickly identify running instances and potential cost-saving opportunities.
+
+𝟯. 𝗮𝘄𝘀 𝗰𝗹𝗼𝘂𝗱𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻 𝗹𝗶𝘀𝘁-𝗲𝘅𝗽𝗼𝗿𝘁𝘀 --𝗾𝘂𝗲𝗿𝘆 '𝗘𝘅𝗽𝗼𝗿𝘁𝘀[*].[𝗡𝗮𝗺𝗲,𝗩𝗮𝗹𝘂𝗲]' --𝗼𝘂𝘁𝗽𝘂𝘁 𝘁𝗮𝗯𝗹𝗲
+ Peek behind the curtain of your CloudFormation stacks with this command. It lists all the exported values from your stacks in a neat table format, making it a breeze to find and use cross-stack references.
+
+===================================================================================================================================================================
+How COVID-19 Pushed Blinkit to Cut AWS Costs by 50%
+
+Before COVID, they were laser-focused on growth, using AWS as a core driver. However, the pandemic made them rethink their strategy and focus on efficiency to better serve their customers. Through strategic cost-cutting measures, they successfully reduced their AWS costs by 50%, saving millions annually 👇🏻 
+
+Key Areas of Optimization 🔍 
+1️⃣ Data Transfer Costs 👇🏻
+➡ They identified significant costs from NAT Gateway and cross-AZ traffic.
+➡ Solution: Deployed VPC endpoints for S3, reducing data transfer costs by 30%.
+
+2️⃣ EC2 & Reserved Instances👇🏻
+➡ After right-sizing instances and leveraging Spot Instances, they cut EC2 costs by 40%.
+➡ Migrating workloads to Convertible RIs ensured 100% utilization, minimizing wastage.
+
+3️⃣ S3 Costs 👇🏻
+➡Without proper lifecycle policies, S3 costs were steadily rising.
+➡ Implemented intelligent tiering and data compression for backups, leading to 25% cost savings.
+
+4️⃣ Resource Optimization 👇🏻
+➡ By scaling down their stage environments at night and reducing unnecessary EBS volumes, they saved 35% on stage infrastructure.
+➡ Additionally, Pod resource requests were optimized, reducing Kubernetes CPU usage by 70%.
+
+5️⃣ Spot Instances 👇🏻
+➡ Shifting to Spot Instances for 99% of production workloads drastically reduced EC2 costs. Managed spot coverage through autoscaling groups with graceful shutdown mechanisms to ensure availability.
+
+Tools Used 🛠️ 
+➡ AWS Cost Explorer: For identifying major cost contributors.
+➡ Athena & CUR: For granular insights on S3, EC2, and data transfer usage.
+➡ VPC Flow Logs: To identify traffic patterns and optimize data transfer.
+
+Result ⚡
+➡ They successfully reduced AWS costs by 50%, with no impact on performance or availability, ensuring more savings during a challenging time.
+➡ This was a huge learning experience in efficiency, and they are continuing to optimize further!
+
+===================================================================================================================================================================
+Here’s how you can list the best practices for IAM in AWS 
+
+1. Follow the Principle of Least Privilege
+ Always grant the minimum permissions required for users and roles to perform their tasks.
+
+2. Use IAM Roles Instead of Access Keys
+ Prefer IAM roles with temporary credentials over long-term access keys for services like EC2 or Lambda.
+
+3. Enable Multi-Factor Authentication (MFA)
+ Enforce MFA, especially for sensitive accounts like administrators.
+
+4. Regularly Rotate Credentials
+ Rotate passwords, access keys, and other credentials regularly. Remove inactive keys immediately.
+
+5. Use Managed Policies Over Inline Policies
+ Use AWS managed or customer-managed policies for reusability and easier management.
+
+6. Monitor IAM Activity
+ Use AWS CloudTrail and IAM Access Analyzer to monitor and log all IAM activity for security and auditing purposes.
+
+7. Implement Permissions Boundaries
+ Use permissions boundaries to limit the maximum permissions users or roles can have, even if granted more permissions by others.
+
+8. Leverage AWS Organizations and Service Control Policies (SCPs)
+ Use AWS Organizations to centrally manage permissions across multiple accounts by applying SCPs.
+
+9. Use IAM Groups for Permission Management
+ Assign permissions to groups rather than individual users to simplify access management.
+
+10. Limit Root Account Usage
+ Limit the use of the root account and enable MFA. Avoid using the root account for everyday tasks.
+
+11. Review IAM Permissions Regularly
+ Conduct periodic reviews of permissions to ensure only necessary access is granted.
+
+12. Use Resource-Based Policies
+ When needed, apply resource-based policies, such as for S3 buckets, to manage cross-account access efficiently.
+
+13. Implement Policy Conditions
+ Use conditions in policies, like IP address restrictions or requiring MFA, for more granular control.
+
+14. Tag IAM Resources
+ Tag IAM roles, users, and policies to easily track and manage them across your AWS environment.
+
+===================================================================================================================================================================
+
